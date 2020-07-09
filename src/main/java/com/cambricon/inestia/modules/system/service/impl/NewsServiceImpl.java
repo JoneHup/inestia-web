@@ -4,11 +4,9 @@ import com.cambricon.inestia.core.utils.DateUtil;
 import com.cambricon.inestia.core.utils.PageResultSet;
 import com.cambricon.inestia.modules.system.mapper.NewsContentMapper;
 import com.cambricon.inestia.modules.system.mapper.NewsMapper;
-import com.cambricon.inestia.modules.system.po.Log;
 import com.cambricon.inestia.modules.system.po.News;
-import com.cambricon.inestia.modules.system.po.NewsContext;
+import com.cambricon.inestia.modules.system.po.NewsContent;
 import com.cambricon.inestia.modules.system.po.User;
-import com.cambricon.inestia.modules.system.query.LogQuery;
 import com.cambricon.inestia.modules.system.query.NewsQuery;
 import com.cambricon.inestia.modules.system.service.NewsService;
 import com.cambricon.inestia.modules.system.service.UserService;
@@ -22,10 +20,7 @@ import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.weekend.Weekend;
 import tk.mybatis.mapper.weekend.WeekendCriteria;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
-import java.util.Objects;
 
 /**
  * @Description: TODO
@@ -81,22 +76,27 @@ public class NewsServiceImpl implements NewsService {
     @Override
     @Transactional
     public void createNews(News news) {
-        NewsContext newsContext = new NewsContext();
-        newsContext.setContent(news.getContent());
-        newsContentMapper.insert(newsContext);
+        NewsContent newsContent = new NewsContent();
+        newsContent.setContent(news.getContent());
+        newsContentMapper.insert(newsContent);
 
         String username = (String) SecurityUtils.getSubject().getPrincipal();
         User user = userService.findByUsername(username);
         news.setCreator(user.getId());
         news.setCreateDate(new Date());
         news.setModifyDate(new Date());
-        news.setPk_content(newsContext.getId());
+        news.setPk_content(newsContent.getId());
         newsMapper.insertSelective(news);
     }
 
     @Override
     @Transactional
     public void updateNews(News news) {
+        NewsContent newsContent = new NewsContent();
+        newsContent.setId(news.getPk_content());
+        newsContent.setContent(news.getContent());
+        newsContentMapper.updateByPrimaryKeySelective(newsContent);
+
         news.setModifyDate(new Date());
         newsMapper.updateByPrimaryKeySelective(news);
     }
@@ -109,6 +109,9 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public News findById(NewsQuery newsQuery) {
-        return newsMapper.selectByPrimaryKey(newsQuery.getNewsId());
+        News news = newsMapper.selectByPrimaryKey(newsQuery.getNewsId());
+        NewsContent newsContent = newsContentMapper.selectByPrimaryKey(news.getPk_content());
+        news.setContent(newsContent.getContent());
+        return news;
     }
 }

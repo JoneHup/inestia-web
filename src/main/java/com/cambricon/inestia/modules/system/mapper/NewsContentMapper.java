@@ -1,8 +1,7 @@
 package com.cambricon.inestia.modules.system.mapper;
 
 import com.cambricon.inestia.core.utils.MyMapper;
-import com.cambricon.inestia.modules.system.po.News;
-import com.cambricon.inestia.modules.system.po.NewsContext;
+import com.cambricon.inestia.modules.system.po.NewsContent;
 
 /**
  * @Description: TODO
@@ -10,7 +9,7 @@ import com.cambricon.inestia.modules.system.po.NewsContext;
  * @date: 2020/5/12 20:31
  * @Version: 1.0
  **/
-public interface NewsContentMapper extends MyMapper<NewsContext> {
+public interface NewsContentMapper extends MyMapper<NewsContent> {
 
-    int insert(NewsContext newsContext);
+    int insert(NewsContent newsContent);
 }

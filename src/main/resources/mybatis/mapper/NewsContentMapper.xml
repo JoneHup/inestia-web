@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cambricon.inestia.modules.system.mapper.NewsContentMapper">
-    <resultMap id="BaseResultMap" type="com.cambricon.inestia.modules.system.po.NewsContext" >
+    <resultMap id="BaseResultMap" type="com.cambricon.inestia.modules.system.po.NewsContent" >
         <!--
           WARNING - @mbg.generated
         -->
@@ -10,7 +10,7 @@
     </resultMap>
 
 
-    <insert id="insert" parameterType="com.cambricon.inestia.modules.system.po.NewsContext" useGeneratedKeys="true" keyProperty="id">
+    <insert id="insert" parameterType="com.cambricon.inestia.modules.system.po.NewsContent" useGeneratedKeys="true" keyProperty="id">
         insert into sys_news_content(content) VALUES(#{content})
     </insert>
 </mapper>
