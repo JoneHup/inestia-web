@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <title>琴智科技</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="robots" content="All" />
+    <link rel="shortcut icon" th:href="@{/static/home/img/title.ico}"/>
+    <link th:href="@{/static/home/js/bootstrap/css/less/bootstrap.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/css/font-awesome.min.css}" rel="stylesheet">
+    <link th:href="@{/static/home/css/swiper.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/js/layui/css/layui.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/animation.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/iconfont.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/video-js.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/jquery.fancybox.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/style.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/cp-p3.css}" rel="stylesheet" type="text/css" />
+    <script th:src="@{/static/home/js/jquery-1.12.4.min.js}"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?08bf0a6e04a9cb9128b9e26f3355b392";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</head>
+<body>
+
+<header th:include="home/header :: header"></header>
+
+<div class="index-banner">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/background-1.jpg)'">
+
+                <div class="container">
+                    <div class="item banner1">
+                        <div class="th1 " >让机器更好地理解和服务人类</div>
+                        <div class="tbtn" >
+                            <a  th:href="@{/home/product(id=${1})}" class="layui-btn">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/background-2.jpg)'">
+                <div class="container">
+                    <div class="item">
+                        <div class="th2" >技术架构</div>
+                        <div class="th1" >核心芯片是通用CPU峰值计算能力低、耗电多</div>
+                        <div class="tdes" >
+                            <p>核心芯片是智能芯片,峰值计算能力高、耗电少</p>
+                        </div>
+                        <div class="tbtn" >
+                            <a  th:href="@{/home/product(id=${2})}" class="layui-btn">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/background-3.jpg)'">
+                <div class="container">
+                    <div class="item">
+                        <div class="th2" >应用领域</div>
+                        <div class="th1" >主要面向科学计算和工程计算</div>
+                        <div class="tdes" >
+                            <p>主要面向“智能+”产业应用，并能兼顾科研</p>
+                        </div>
+                        <div class="tbtn" >
+                            <a  th:href="@{/home/product(id=${3})}" class="layui-btn">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/background-4.jpg)'">
+                <div class="container">
+                    <div class="item">
+                        <div class="th2" >赋能产业</div>
+                        <div class="th1" >面向国家重大战略需求，不直接带动产业</div>
+                        <div class="tdes" >
+                            <p>可直接赋能智慧城市、智能制造、智能医疗、智能教育等</p>
+                        </div>
+                        <div class="tbtn" >
+                            <a  th:href="@{/home/product(id=${4})}" class="layui-btn">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/background-5.jpg)'">
+                <div class="container">
+                    <div class="item">
+                        <div class="th2" >造价成本</div>
+                        <div class="th1" >造价昂贵、运营成本高E级计算尚未实现商用
+                        </div>
+                        <div class="tdes" >
+                            <p>造价成本及运营成本较低,已实现E级智能计算</p>
+                        </div>
+                        <div class="tbtn" >
+                            <a  th:href="@{/home/product(id=${5})}" class="layui-btn">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+
+<div class="index-box1">
+    <div class="container">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="item wow fadeInUpa">
+                        <div class="img"><img th:src="@{/static/home/img/mid-1.jpg}" alt="云端AI加速卡" /></div>
+                        <div class="txt">
+                            <h2>技术架构</h2>
+                            <p>核心芯片是智能芯片,峰值计算能力高、耗电少</p>
+                            <div class="btns">
+                                <a  th:href="@{/home/product(id=${7})}" class="layui-btn">了解更多</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="item wow fadeInUpa">
+                        <div class="img"><img th:src="@{/static/home/img/mid-2.jpg}" alt="终端智能处理器IP" /></div>
+                        <div class="txt">
+                            <h2>应用领域</h2>
+                            <p>主要面向“智能+”产业应用，并能兼顾科研</p> <div class="btns">
+                            <a  th:href="@{/home/product(id=${8})}" class="layui-btn">了解更多</a>
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="item wow fadeInUpa">
+                        <div class="img"><img th:src="@{/static/home/img/mid-3.jpg}" alt="边缘AI加速卡" /></div>
+                        <div class="txt">
+                            <h2>赋能产业</h2>
+                            <p>可直接赋能智慧城市、智能制造、智能医疗、智能教育等</p>
+                            <div class="btns">
+                                <a  th:href="@{/home/product(id=${9})}" class="layui-btn">了解更多</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--  <div class="swiper-button-next"></div>
+         <div class="swiper-button-prev"></div> -->
+    </div>
+</div>
+
+<div class="index-box4 index-box4-tab">
+    <div class="container">
+        <div class="layui-tab">
+            <ul class="layui-tab-title">
+                <li class="layui-this" style="cursor: default;">公司新闻</li>
+                <!-- <li>媒体报道</li> -->
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <a th:href="@{/home/news(currentPage=${1},offset=${0},limit=${6},order=${'desc'})}" class="more">更多</a>
+                    <div class="row">
+                        <th th:each="row : ${resultSet.randomRows}">
+                            <div class="col-xs-12 col-sm-3">
+                                <div class="item wow fadeInUpa">
+                                    <div class="img">
+<!--                                        <img th:src="@{/static/home/img/news-1.jpg}" alt="Alternate Text" />-->
+                                        <img th:if="${not #strings.isEmpty(row.img)}" th:src="${row.img}" alt="Alternate Text" />
+                                        <img th:if="${#strings.isEmpty(row.img)}" th:src="@{/static/home/img/news-base.jpg}" alt="Alternate Text" />
+                                    </div>
+                                    <div class="txt">
+                                        <div class="date">
+                                            <span class="day">[[${row.day}]]</span>
+                                            <span class="year">[[${row.month}]]<br />[[${row.year}]]</span>
+                                        </div>
+                                        <div class="tit">
+                                            <a th:href="@{/home/news/detail(newsId=${row.id})}">[[${row.title}]]</a>
+                                        </div>
+                                        <div class="des">
+                                            <p th:utext="${row.contentExt}"></p>
+                                        </div>
+                                        <div class="source">来源：[[${row.source}]]</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </th>
+                    </div>
+                </div>
+                <div class="layui-tab-item">
+                    <a href="/index.php?m=content&c=index&a=lists&catid=128" class="more">更多</a>
+
+                    <!--<div class="row page-news-box1">
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="item">
+                                <a href="">
+                                    <div class="txt">
+                                        <div class="date">
+                                            <span class="day">20</span>
+                                            <span class="year">Nov<br />2019</span>
+                                        </div>
+                                        <h3>
+
+                                            搭载寒武纪处理器，金山云新一代云物理机正式上线
+                                        </h3>
+                                        <div class="logos">
+                                            <img src="/uploadfile/2019/1120/20191120015853709.jpg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="img">
+                                        <img src="/uploadfile/2019/1120/20191120020444117.jpg" alt=" 搭载寒武纪处理器，金山云新一代云物理机正式上线" />
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="item">
+                                <a href="">
+                                    <div class="txt">
+                                        <div class="date">
+                                            <span class="day">15</span>
+                                            <span class="year">Nov<br />2019</span>
+                                        </div>
+                                        <h3>
+
+                                            搭载寒武纪处理器，金山云新一代云物理机正式上线
+                                        </h3>
+                                        <div class="logos">
+                                            <img src="/uploadfile/2019/1115/20191115113607102.jpg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="img">
+                                        <img src="/uploadfile/2019/1115/20191115112816176.jpg" alt=" 搭载寒武纪处理器，金山云新一代云物理机正式上线" />
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="index-box5">
+    <div class="index-tit border-no">
+        <div class="container">
+            <h2>合作伙伴及客户</h2>
+        </div>
+    </div>
+    <div class="container">
+        <ul>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-1.jpg}" alt="阿里巴巴" /></a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-2.jpg}" alt="AMAX" /></a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-3.jpg}" alt="百度" /></a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-4.jpg}" alt="的卢深视" /></a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-5.jpg}" alt="联想" /></a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-6.jpg}" alt="浪潮" /></a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-7.jpg}" alt="SIGM" /></a></li>
+        </ul>
+    </div>
+</div>
+<footer th:include="home/footer :: footer"></footer>
+<!--<ul class="layui-fixbar" style="right: 20px; bottom: 5px;">
+    <li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;"></li>
+</ul>-->
+
+<!--<script type="text/javascript">
+    $('#navli a').each(function(){
+        if ($(this).attr("href")=='javaScript:;') {
+            $(this).addClass("no_pointer");
+        }
+
+    });
+</script>-->
+
+<script th:src="@{/static/home/js/layui/layui.js}"></script>
+<script th:src="@{/static/home/js/layui/config.js}"></script>
+<script th:src="@{/static/home/js/swiper.js}"></script>
+<script th:src="@{/static/home/js/video.js/video.js}"></script>
+<script th:src="@{/static/home/js/jquery.appear.js}"></script>
+<script th:src="@{/static/home/js/jquery.countTo.js}"></script>
+<script th:src="@{/static/home/js/bootstrap/js/bootstrap.js}"></script>
+<script th:src="@{/static/home/js/gd.js}"></script>
+<script th:src="@{/static/home/js/jquery.fancybox.js}"></script>
+<script th:src="@{/static/home/js/wow.js}"></script>
+<script th:src="@{/static/home/js/jquery-ui.min.js}"></script>
+<script th:src="@{/static/home/js/page.js}"></script>
+</body>
+</html>

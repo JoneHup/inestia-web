@@ -1,0 +1,265 @@
+<!--<!DOCTYPE html>-->
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <title>琴智科技</title>
+    <meta name="keywords" content="琴智科技；疫情防控；智慧城市；智慧产业；" />
+    <meta name="description" content="" />
+    <meta name="robots" content="All" />
+    <link rel="shortcut icon" th:href="@{/static/home/img/favicon.ico}"/>
+    <link th:href="@{/static/home/js/bootstrap/css/less/bootstrap.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/css/font-awesome.min.css}" rel="stylesheet">
+    <link th:href="@{/static/home/css/swiper.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/js/layui/css/layui.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/animation.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/iconfont.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/video-js.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/jquery.fancybox.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/style.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/cp-p3.css}" rel="stylesheet" type="text/css" />
+    <script th:src="@{/static/home/js/jquery-1.12.4.min.js}"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?08bf0a6e04a9cb9128b9e26f3355b392";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+
+
+        })();
+    </script>
+
+</head>
+<body>
+
+<header th:include="home/header :: header"></header>
+
+<div class="page-banner" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/news-header.png)'">
+    <div class="txt wow fadeInUpa">
+        <h2>新闻中心</h2>
+        <p></p>
+    </div>
+</div>
+
+<div class="page-nav page-nav-md">
+    <div class="container conth"  height="58px!important;">
+        <div class="page-nav-left">
+            <h3>公司新闻</h3>
+        </div>
+        <div class="page-nav-left">
+            <div class="page-nav-right-nav">
+                <ul>
+                    <li class="active"><a th:href="@{/home/news(currentPage=${1},offset=${0},limit=${6},order=${'desc'})}">公司新闻</a></li>
+                </ul>
+            </div>
+<!--            <div class="page-nav-right-select" id="page-nav-right-select">-->
+<!--                <ul>-->
+<!--                    <li>-->
+<!--                        <a href="javaScript:void(0);">全部年份</a>-->
+<!--                        <ul>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=2020&month=">2020</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=2019&month=">2019</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=2018&month=">2018</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=2017&month=">2017</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=2016&month=">2016</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="javaScript:void(0);">月份</a>-->
+<!--                        <ul>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=&month=1">1</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=&month=2">2</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=&month=3">3</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=&month=4">4</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=&month=5">5</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=&month=6">6</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=&month=7">7</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=&month=8">8</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=&month=9">9</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=&month=10">10</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=&month=11">11</a></li>-->
+<!--                            <li><a href="/index.php?m=content&c=index&a=lists&catid=127&year=&month=12">12</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+
+<div class="page-news-box1">
+    <div class="container">
+        <div class="row">
+
+            <th th:each="row : ${resultSet.rows}">
+                <div class="col-xs-12 col-sm-4">
+                    <div class="item">
+                        <a th:href="@{/home/news/detail(newsId=${row.id})}">
+                            <div class="img">
+                                <img th:if="${not #strings.isEmpty(row.img)}" th:src="${row.img}" th:alt="${row.title}" />
+                                <img th:if="${#strings.isEmpty(row.img)}" th:src="@{/static/home/img/news-base.jpg}" th:alt="${row.title}" />
+                            </div>
+                            <div class="txt">
+                                <div class="date">
+                                    <span class="day">[[${row.day}]]</span>
+                                    <span class="year">[[${row.month}]] <br />[[${row.year}]]</span>
+                                </div>
+                                <h3>
+                                    [[${row.title}]]
+                                </h3>
+                                <div class="source">[[${row.source}]]</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </th>
+            <!--<div class="col-xs-12 col-sm-4">
+                <div class="item">
+                    <a href="/index.php?m=content&c=index&a=show&catid=127&id=12">
+
+                        <div class="img">
+                            <img th:src="@{/static/home/img/news-1.jpg}" alt=" 第二十一届高交会圆满落幕，寒武纪思元220成为关注热点" />
+                        </div>
+                        <div class="txt">
+                            <div class="date">
+                                <span class="day">20</span>
+                                <span class="year">Nov <br />2019</span>
+                            </div>
+                            <h3>第二十一届高交会圆满落幕，寒武纪思元220成为关注热点
+                            </h3>
+                            <div class="source">来源：寒武纪科技微信公众号</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="item">
+                    <a href="/index.php?m=content&c=index&a=show&catid=127&id=11">
+
+                        <div class="img">
+                            <img th:src="@{/static/home/img/news-1.jpg}" alt=" 寒武纪推出边缘AI芯片「思元220」" />
+                        </div>
+                        <div class="txt">
+                            <div class="date">
+                                <span class="day">20</span>
+                                <span class="year">Nov <br />2019</span>
+                            </div>
+                            <h3>
+                                寒武纪推出边缘AI芯片「思元220」
+                            </h3>
+                            <div class="source">来源：寒武纪科技微信公众号</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="item">
+                    <a href="/index.php?m=content&c=index&a=show&catid=127&id=10">
+                        <div class="img">
+                            <img th:src="@{/static/home/img/news-1.jpg}" alt=" 寒武纪思元220边缘AI芯片将在高交会重磅发布！" />
+                        </div>
+                        <div class="txt">
+                            <div class="date">
+                                <span class="day">20</span>
+                                <span class="year">Nov <br />2019</span>
+                            </div>
+                            <h3>
+                                寒武纪思元220边缘AI芯片将在高交会重磅发布！
+                            </h3>
+                            <div class="source">来源：寒武纪科技微信公众号</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="item">
+                    <a href="/index.php?m=content&c=index&a=show&catid=127&id=9">
+
+                        <div class="img">
+                            <img th:src="@{/static/home/img/news-1.jpg}" alt=" 思元270入选世界互联网领先科技成果，思元220箭在弦上！" />
+                        </div>
+                        <div class="txt">
+                            <div class="date">
+                                <span class="day">19</span>
+                                <span class="year">Nov <br />2019</span>
+                            </div>
+                            <h3>
+                                思元270入选世界互联网领先科技成果，思元220箭在弦上！
+                            </h3>
+                            <div class="source">来源：寒武纪科技微信公众号</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="item">
+                    <a href="/index.php?m=content&c=index&a=show&catid=127&id=8">
+
+                        <div class="img">
+                            <img th:src="@{/static/home/img/news-1.jpg}" alt=" 寒武纪和中国电信签署战略合作协议 共筑5G、AI和边缘计算生态" />
+                        </div>
+                        <div class="txt">
+                            <div class="date">
+                                <span class="day">19</span>
+                                <span class="year">Nov <br />2019</span>
+                            </div>
+                            <h3>
+                                寒武纪和中国电信签署战略合作协议 共筑5G、AI和边缘计算生态
+                            </h3>
+                            <div class="source">来源：寒武纪科技微信公众号</div>
+                        </div>
+                    </a>
+                </div>
+            </div>-->
+
+        </div>
+
+        <div class="page-news-page">
+            <ul>
+                <a class="a1">[[${resultSet.total}]]条</a>
+                <a th:if="${resultSet.currentPage} gt 1" th:href="@{/home/news(currentPage=${resultSet.currentPage -1},offset=${0},limit=${6},order=${'desc'})}" class="a1">上一页</a>
+                <a th:if="${resultSet.currentPage} le 1" href="javascript:void(0)" class="a1">上一页</a>
+                <th th:each="index : ${resultSet.pageList}">
+                    <span th:if="${index} eq ${resultSet.currentPage}">[[${resultSet.currentPage}]]</span>
+                    <a th:if="${index} ne ${resultSet.currentPage}" th:href="@{/home/news(currentPage=${index},offset=${0},limit=${6},order=${'desc'})}">[[${index}]]</a>
+                </th>
+                <a th:if="${resultSet.currentPage} lt ${resultSet.totalPage}" th:href="@{/home/news(currentPage=${resultSet.currentPage +1},offset=${0},limit=${6},order=${'desc'})}" class="a1">下一页</a>
+                <a th:if="${resultSet.currentPage} ge ${resultSet.totalPage}" href="javascript:void(0)" class="a1">下一页</a>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<footer th:include="home/footer :: footer"></footer>
+<!--<ul class="layui-fixbar" style="right: 20px; bottom: 5px;">-->
+<!--    <li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;"></li>-->
+<!--</ul>-->
+<script type="text/javascript">
+    $('#navli a').each(function(){
+        if ($(this).attr("href")=='javaScript:;') {
+            $(this).addClass("no_pointer");
+        }
+
+    });
+</script>
+
+<script th:src="@{/static/home/js/layui/layui.js}"></script>
+<script th:src="@{/static/home/js/layui/config.js}"></script>
+<script th:src="@{/static/home/js/swiper.js}"></script>
+<script th:src="@{/static/home/js/video.js/video.js}"></script>
+<script th:src="@{/static/home/js/jquery.appear.js}"></script>
+<script th:src="@{/static/home/js/jquery.countTo.js}"></script>
+<script th:src="@{/static/home/js/jquery.tap.js}"></script>
+<script th:src="@{/static/home/js/bootstrap/js/bootstrap.js}"></script>
+<script th:src="@{/static/home/js/gd.js}"></script>
+<script th:src="@{/static/home/js/jquery.fancybox.js}"></script>
+<script th:src="@{/static/home/js/wow.js}"></script>
+<script th:src="@{/static/home/js/jquery-ui.min.js}"></script>
+<script th:src="@{/static/home/js/page.js}"></script>
+</body>
+</html>

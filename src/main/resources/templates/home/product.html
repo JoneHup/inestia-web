@@ -1,0 +1,236 @@
+<!--<!DOCTYPE html>-->
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <title>琴智科技</title>
+    <meta name="keywords" content="琴智科技；疫情防控；智慧城市；智慧产业；" />
+    <meta name="description" content="" />
+    <meta name="robots" content="All" />
+    <link rel="shortcut icon" th:href="@{/static/home/img/favicon.ico}"/>
+    <link th:href="@{/static/home/js/bootstrap/css/less/bootstrap.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/css/font-awesome.min.css}" rel="stylesheet">
+    <link th:href="@{/static/home/css/swiper.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/js/layui/css/layui.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/animation.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/iconfont.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/video-js.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/jquery.fancybox.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/style.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/cp-p3.css}" rel="stylesheet" type="text/css" />
+    <script th:src="@{/static/home/js/jquery-1.12.4.min.js}"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?08bf0a6e04a9cb9128b9e26f3355b392";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+
+
+        })();
+    </script>
+
+</head>
+<body>
+
+<header th:include="home/header :: header"></header>
+
+<div class="page-banner" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/product_head.jpg)'">
+    <div class="txt wow fadeInUpa">
+        <h2>产品及技术</h2>
+        <p>产品技术介绍</p>
+    </div>
+</div>
+
+<div class="page-nav ">
+    <div class="container conth">
+        <div class="page-nav-left">
+            <ul id="page-nav">
+                <li class="active">产品技术</li>
+                <li th:if="${not #strings.isEmpty(product.rootName)}">[[${product.rootName}]]</li>
+                <li th:if="${not #strings.isEmpty(product.parentName)}" class="last">[[${product.parentName}]]</li>
+                <li th:if="${not #strings.isEmpty(product.nodeName)}" class="last">[[${product.nodeName}]]</li>
+            </ul>
+            <!--<h3>Cambricon-1M</h3>-->
+        </div>
+        <div th:if="${not #strings.isEmpty(product.nodeName)}" class="page-nav-right">
+            <div class="page-nav-right-md" id="page-nav-md-a">
+                <a href="javaScript:;nav1" class="active">概述</a>
+                <a href="javaScript:;nav2" >产品规格</a>
+                <!--<a href="javaScript:;nav3" >合作伙伴</a>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--产品系列介绍******************************************************开始-->
+<div th:if="${#strings.isEmpty(product.nodeName)}" class="container">
+    <div class="page-1h-box1 wow fadeInUpa">
+        <th th:if="${not #strings.isEmpty(product.nodeName)}">
+            <h2>[[${product.nodeName}]]</h2>
+        </th>
+        <th th:if="${#strings.isEmpty(product.nodeName)}">
+            <h2>[[${product.parentName}]]系列</h2>
+        </th>
+        <p><p>该计算平台是基于中科院战略性先导专项“国产安全可控先进计算机系统”的重要研究成果，全系列使用中科曙光服务器及中科寒武纪AI加速卡（神经元网络专用芯片）。</p></p>
+    </div>
+
+    <div class="page-1h-box2">
+        <div class="item wow fadeInUpa">
+            <div class="txt">
+                <h3>神经元网络专用芯片-1</h3>
+                <h4>芯片一版本</h4>
+                <p><p>算力将达到4Eops（百亿亿次/秒），截至2019年底已建成算力1.16 Eops。</p></p>
+            </div>
+            <div class="img wow fadeInUpa">
+                <img th:src="@{/static/home/img/product_1.jpg}" alt="" />
+            </div>
+        </div>
+        <div class="item wow fadeInUpa">
+            <div class="txt">
+                <h3>神经元网络专用芯片-2</h3>
+                <h4>芯片二版本</h4>
+                <p><p>算力将达到4Eops（百亿亿次/秒），截至2019年底已建成算力1.16 Eops。</p></p>
+            </div>
+            <div class="img wow fadeInUpa">
+                <img th:src="@{/static/home/img/product_2.jpg}" alt="" />
+            </div>
+        </div>
+        <div class="item wow fadeInUpa">
+            <div class="txt">
+                <h3>神经元网络专用芯片-3</h3>
+                <h4>芯片三版本</h4>
+                <p><p>算力将达到4Eops（百亿亿次/秒），截至2019年底已建成算力1.16 Eops。</p></p>
+            </div>
+            <div class="img wow fadeInUpa">
+                <img th:src="@{/static/home/img/product_3.jpg}" alt="" />
+            </div>
+        </div>
+    </div>
+</div>
+<!--产品系列介绍******************************************************结束-->
+
+<!--产品系列介绍******************************************************开始-->
+<th th:if="${not #strings.isEmpty(product.nodeName)}">
+    <div class="scroll-nav page-cp-p2-box1">
+        <div class="container">
+            <div class="item">
+                <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/product_4.jpg}" alt="思元270-S4" /></div>
+                <div class="txt">
+                    <div class="tit wow fadeInUpa">
+                        <h2>AI加速卡<small>神经元网络专用芯片</small></h2>
+                    </div>
+                    <div class="body wow fadeInUpa">
+                        <p>横琴先进智能计算平台整体规划分为三期，完全建成后算力将达到4Eops（百亿亿次/秒），截至2019年底已建成算力1.16 Eops。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-nav page-cp-p3-box2 no-padding-top">
+        <div class="container">
+            <div class="tit wow fadeInUpa">
+                <h2>产品规格</h2>
+                <p>国产安全可控先进计算机系统</p>
+            </div>
+            <div class="body wow fadeInUpa">
+                <table class="no-first">
+                    <thead>
+                    <tr><th colspan="3"><span>AI加速卡产品规格</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>产品性能</th>
+                        <td>
+                            <p>芯片型号</p>
+                            <p>INT8理论峰值/TOPS</p>
+                            <p>INT4理论峰值/TOPS</p>
+                            <p>INT16理论峰值/TOPS</p>
+                        </td>
+                        <td>
+                            <p>AI中台系统</p>
+                            <p>128</p>
+                            <p>256</p>
+                            <p>64</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>计算精度支持</th>
+                        <td>低精度、混合精度</td>
+                        <td>INT16，INT8，INT4，FP32，FP16</td>
+                    </tr>
+                    <tr>
+                        <th>内存规格</th>
+                        <td>内存容量<br />
+                            内存位宽<br />
+                            内存带宽</td>
+                        <td>16GB DDR4，ECC<br />
+                            256-bit<br />
+                            102 GB/s</td>
+                    </tr>
+                    <tr>
+                        <th>接口</th>
+                        <td>PCIe接口</td>
+                        <td>x16 PCIe Gen.3</td>
+                    </tr>
+                    <tr>
+                        <th>功耗</th>
+                        <td>最大热设计功耗<br />
+                            散热设计</td>
+                        <td>70w<br />
+                            被动散热</td>
+                    </tr>
+                    <tr>
+                        <th>形态</th>
+                        <td colspan="2" style="text-align:center">半高半长，单槽位</td>
+                    </tr>
+                    <tr>
+                        <th>尺寸</th>
+                        <td colspan="2" style="text-align:center">167.5mm x 68.9mm</td>
+                    </tr>
+                    <tr>
+                        <th>重量</th>
+                        <td colspan="2" style="text-align:center">310g</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-cp-box-ad page-cp-box-ad-lx wow fadeInUpa">
+        <a th:href="@{/home/contactus}">联系我们</a>
+    </div>
+    <div class="fashet"></div><!--撑高度  -->
+</th>
+<!--产品系列介绍******************************************************结束-->
+<footer th:include="home/footer :: footer"></footer>
+<script type="text/javascript">
+    $('#navli a').each(function(){
+        if ($(this).attr("href")=='javaScript:;') {
+            $(this).addClass("no_pointer");
+        }
+
+    });
+</script>
+
+<script th:src="@{/static/home/js/layui/layui.js}"></script>
+<script th:src="@{/static/home/js/layui/config.js}"></script>
+<script th:src="@{/static/home/js/swiper.js}"></script>
+<script th:src="@{/static/home/js/video.js/video.js}"></script>
+<script th:src="@{/static/home/js/jquery.appear.js}"></script>
+<script th:src="@{/static/home/js/jquery.countTo.js}"></script>
+<script th:src="@{/static/home/js/jquery.tap.js}"></script>
+<script th:src="@{/static/home/js/bootstrap/js/bootstrap.js}"></script>
+<script th:src="@{/static/home/js/gd.js}"></script>
+<script th:src="@{/static/home/js/jquery.fancybox.js}"></script>
+<script th:src="@{/static/home/js/wow.js}"></script>
+<script th:src="@{/static/home/js/jquery-ui.min.js}"></script>
+<script th:src="@{/static/home/js/page.js}"></script>
+</body>
+</html>

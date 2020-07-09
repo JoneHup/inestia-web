@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-cn">
+<body>
+<header th:fragment="header">
+    <div class="container">
+        <div class="logo">
+            <a th:href="@{/home/index}"><img th:src="@{/static/home/img/logo-2.png}" alt="琴智科技"/></a>
+        </div>
+        <div class="logo2">
+            <a th:href="@{/home/index}"><img th:src="@{/static/home/img/logo.png}" alt="琴智科技"/></a>
+        </div>
+        <button type="button" class="navbar-toggle" id="daohang">
+            <span class="sr-only">切换导航</span>
+            <span class="icon-bar bar-1"></span>
+            <span class="icon-bar bar-2"></span>
+            <span class="icon-bar bar-3"></span>
+        </button>
+        <nav id="navli">
+            <ul>
+                <li class="">
+                    <!-- 首页 加入我们  关于我们  可以点击-->
+                    <a href="javaScript:;">产品及技术</a>
+                    <div class="navli-nav cp">
+                        <p class="fanhui">
+                            <span class="layui-icon layui-icon-left"></span>返回
+                        </p>
+                        <ul>
+                            <li>
+                                <a href="javaScript:;" >横琴先进智能计算平台的产品</a>
+                                <ul>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${1})}">产品1</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${2})}">产品2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="javaScript:;" >寒武纪的部分产品及技术</a>
+                                <ul>
+                                    <li>
+                                        <a href="javaScript:;" >系列1</a>
+                                        <ul>
+                                            <li>
+                                                <a th:href="@{/home/product(id=${3})}">产品1</a>
+                                            </li>
+                                            <li>
+                                                <a th:href="@{/home/product(id=${4})}">产品2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javaScript:;" >系列2</a>
+                                        <ul>
+                                            <li>
+                                                <a th:href="@{/home/product(id=${5})}">产品1</a>
+                                            </li>
+                                            <li>
+                                                <a th:href="@{/home/product(id=${6})}">产品1</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="javaScript:;" >产品的各项实际应用</a>
+                                <ul>
+                                    <li>
+                                        <a href="javaScript:;" >智慧城市</a>
+                                        <ul>
+                                            <li>
+                                                <a th:href="@{/home/product(id=${7})}">城市实时仿真</a>
+                                            </li>
+                                            <li>
+                                                <a th:href="@{/home/product(id=${8})}">智能交通系统</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javaScript:;" >智慧产业</a>
+                                        <ul>
+                                            <li>
+                                                <a th:href="@{/home/product(id=${9})}">智能教育</a>
+                                            </li>
+                                            <li>
+                                                <a th:href="@{/home/product(id=${10})}">智能物流</a>
+                                            </li>
+                                            <li>
+                                                <a th:href="@{/home/product(id=${11})}">智能医疗</a>
+                                            </li>
+                                            <li>
+                                                <a th:href="@{/home/product(id=${12})}">智能金融</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!--<ul>
+                            <li>
+                                <a href="javaScript:;" >软件开发平台</a>
+                                <ul>
+                                    <li>
+                                        <a href="/index.php?m=content&c=index&a=lists&catid=71" >Cambricon Neuware</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>-->
+                    </div>
+                </li>
+                <li class="">
+                    <a th:href="@{/home/platform}">横琴先进智能计算平台</a>
+                    <div class="navli-nav ">
+                        <p class="fanhui">
+                            <span class="layui-icon layui-icon-left"></span>返回
+                        </p>
+                        <ul>
+                            <li>
+                                <a th:href="@{/home/platform(nav=${'nav1'})}" >平台背景介绍</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/home/platform(nav=${'nav2'})}" >平台项目介绍</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/home/platform(nav=${'nav3'})}">平台使用网站链接</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="">
+                    <!-- 首页 加入我们  关于我们  可以点击-->
+                    <a th:href="@{/home/weinfo}">公司介绍</a>
+                    <div class="navli-nav cp2">
+                        <p class="fanhui">
+                            <span class="layui-icon layui-icon-left"></span>返回
+                        </p>
+                        <ul>
+                            <li>
+                                <a th:href="@{/home/weinfo(nav=${'nav1'})}">公司简介</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/home/weinfo(nav=${'nav2'})}">公司愿景</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/home/weinfo(nav=${'nav3'})}">企业文化</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/home/weinfo(nav=${'nav4'})}">相关案例</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/home/weinfo(nav=${'nav5'})}">合作企业</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/home/weinfo(nav=${'nav6'})}">服务</a>
+                            </li>
+                            <!--<li>
+                                <a href="javaScript:;"  target="_blank"  >资料库</a>
+                                <ul>
+                                    <li>
+                                        <a href="http://forum.cambricon.com/list-64-1.html"  target="_blank" >在线文档</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://forum.cambricon.com/list-58-1.html"  target="_blank" >下载专区</a>
+                                    </li>
+                                </ul>
+                            </li>-->
+                        </ul>
+                    </div>
+                </li>
+                <li class="">
+                    <!-- 首页 加入我们  关于我们  可以点击-->
+                    <a href="javaScript:;">企业动态</a>
+                    <div class="navli-nav ">
+                        <p class="fanhui">
+                            <span class="layui-icon layui-icon-left"></span>返回
+                        </p>
+                        <ul>
+                            <li>
+                                <a th:href="@{/home/news(currentPage=${1},offset=${0},limit=${6},order=${'desc'})}" >公司新闻</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="">
+                    <!-- 首页 加入我们  关于我们  可以点击-->
+                    <a th:href="@{/home/contactus}">联系我们</a>
+                    <div class="navli-nav"><!-- 加入我们-->
+                        <p class="fanhui">
+                            <span class="layui-icon layui-icon-left"></span>返回
+                        </p>
+                        <ul>
+                            <li>
+                                <a th:href="@{/home/contactus(nav=${'nav1'})}">招聘事宜</a>
+                            </li>
+
+                            <li>
+                                <a th:href="@{/home/contactus(nav=${'nav2'})}">公司联系方式</a>
+                            </li>
+
+                            <li>
+                                <a th:href="@{/home/contactus(nav=${'nav3'})}">合作事宜</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/home/contactus(nav=${'nav4'})}">招商</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!--<li class="">
+                    &lt;!&ndash; 首页 加入我们  关于我们  可以点击&ndash;&gt;
+                    <a href="/index.php?m=content&c=index&a=lists&catid=7">关于我们</a>
+                    <div class="navli-nav">&lt;!&ndash; 关于我们&ndash;&gt;
+                        <p class="fanhui">
+                            <span class="layui-icon layui-icon-left"></span>返回
+                        </p>
+                        <ul>
+                            <li>
+                                <a href="/index.php?m=content&c=index&a=lists&catid=7#nav1">使命与愿景</a>
+                            </li>
+                            <li>
+                                <a href="/index.php?m=content&c=index&a=lists&catid=7#nav2">寒武纪介绍</a>
+                            </li>
+                            <li>
+                                <a href="/index.php?m=content&c=index&a=lists&catid=7#nav3">联系我们</a>
+                            </li>
+                            <li>
+                                <a href="/index.php?m=content&c=index&a=lists&catid=7#nav4">公司地址</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>-->
+            </ul>
+        </nav>
+    </div>
+</header>
+
+</body>
+</html>

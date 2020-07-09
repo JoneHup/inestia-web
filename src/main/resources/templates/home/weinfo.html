@@ -1,0 +1,263 @@
+<!--<!DOCTYPE html>-->
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <title>琴智科技</title>
+    <meta name="keywords" content="琴智科技；疫情防控；智慧城市；智慧产业；" />
+    <meta name="description" content="" />
+    <meta name="robots" content="All" />
+    <link rel="shortcut icon" th:href="@{/static/home/img/favicon.ico}"/>
+    <link th:href="@{/static/home/js/bootstrap/css/less/bootstrap.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/css/font-awesome.min.css}" rel="stylesheet">
+    <link th:href="@{/static/home/css/swiper.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/js/layui/css/layui.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/animation.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/iconfont.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/video-js.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/jquery.fancybox.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/style.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/cp-p3.css}" rel="stylesheet" type="text/css" />
+    <script th:src="@{/static/home/js/jquery-1.12.4.min.js}"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?08bf0a6e04a9cb9128b9e26f3355b392";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+
+
+        })();
+    </script>
+
+</head>
+<body>
+
+<header th:include="home/header :: header"></header>
+
+<div class="page-banner" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/product_head.jpg)'">
+    <div class="txt wow fadeInUpa">
+        <h2>公司介绍</h2>
+        <p></p>
+    </div>
+</div>
+
+<div class="page-nav page-nav-md">
+    <div class="container conth">
+        <div class="page-nav-right">
+            <div class="page-nav-right-md" id="page-nav-md-a">
+                <a th:if="${cusdomQuery.nav} eq 'nav1'" href="#nav1" class="active">公司简介</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav1'" href="#nav1">公司简介</a>
+                <a th:if="${cusdomQuery.nav} eq 'nav2'" href="#nav2" class="active">公司愿景</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav2'" href="#nav2">公司愿景</a>
+                <a th:if="${cusdomQuery.nav} eq 'nav3'" href="#nav3" class="active">企业文化</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav3'" href="#nav3">企业文化</a>
+                <a th:if="${cusdomQuery.nav} eq 'nav4'" href="#nav4" class="active">相关案例</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav4'" href="#nav4">相关案例</a>
+                <a th:if="${cusdomQuery.nav} eq 'nav5'" href="#nav5" class="active">合作企业</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav5'" href="#nav5">合作企业</a>
+                <a th:if="${cusdomQuery.nav} eq 'nav6'" href="#nav6" class="active">服务</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav6'" href="#nav6">服务</a>
+            </div>
+        </div>
+    </div>
+</div>
+<a name="nav1" id="nav1"></a>
+<div class="scroll-nav page-cp-box-tit page-hy-tit">
+    <div class="container">
+        <div class="tit wow fadeInUpa">
+            <h2>琴智科技介绍</h2>
+        </div>
+    </div>
+</div>
+
+<div class="page-ab-box2 wow fadeInUpa" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/weinfo_bg2.jpg)'">
+    <div class="container">
+        <div class="item">
+            <div class="txt">
+                <h3>横琴先进智能计算平台---</h3>
+                <div>横琴先进智能计算平台由中科院、广东省、珠海市、横琴新区共同在横琴落地建设，争取挂牌成为“国家智能计算机研究开发中心 （横琴）”，同时拟在港澳设立分中心。</div>
+                <div>&nbsp;</div>
+                <div>该计算平台是基于中科院战略性先导专项“国产安全可控先进计算机系统”的重要研究成果，全系列使用中科曙光服务器及中科寒武纪AI加速卡（神经元网络专用芯片）。横琴先进智能计算平台整体规划分为三期，完全建成后算力将达到4Eops（百亿亿次/秒），截至2019年底已建成算力1.16 Eops。</div>
+                <div>&nbsp;</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a name="nav2" id="nav2"></a>
+<div class="scroll-nav page-cp-box-tit page-hy-tit">
+    <div class="container">
+        <div class="tit wow fadeInUpa">
+            <h2>公司愿景</h2>
+        </div>
+    </div>
+</div>
+
+<div class="page-ab-box1" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/weinfo_bg1.jpg)'">
+    <div class="item">
+        <div class="txt">
+            <h3>愿景</h3><p>让机器<br />更好地理解和服务人类</p>
+        </div>
+    </div>
+    <div class="item">
+        <div class="txt">
+            <h3>使命</h3><p>为客户创造价值，<br />成为持续创新的智能时代领导者</p>
+        </div>
+    </div>
+</div>
+
+<a name="nav3" id="nav3"></a>
+<div class="scroll-nav page-cp-box-tit page-hy-tit">
+    <div class="container">
+        <div class="tit wow fadeInUpa">
+            <h2>企业文化</h2>
+        </div>
+    </div>
+</div>
+
+<div class="page-ab-box3 wow fadeInUpa" >
+    <div class="container">
+        <div class="item">
+            <div class="txt">
+                <h3>横琴先进智能计算平台</h3>
+                <div>&nbsp;</div>
+                <div>我们遵循国际通行的4S原则（安全、稳定、快速、服务）竭诚为用户提供7*24小时不间断运维服务。</div>
+                <div>&nbsp;</div>
+                <div>我们遵循国际通行的4S原则（安全、稳定、快速、服务）竭诚为用户提供7*24小时不间断运维服务。</div>
+                <div>&nbsp;</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a name="nav4" id="nav4"></a>
+<div class="scroll-nav page-cp-box-tit page-hy-tit">
+    <div class="container">
+        <div class="tit wow fadeInUpa">
+            <h2>相关案例</h2>
+        </div>
+    </div>
+</div>
+
+<div class="page-ab-box4 container wow fadeInUpa">
+    <div class="row">
+        <div class="col-xs-6 col-sm-3">
+            <div class="item item1">
+                <strong>案例一</strong>
+                <span><p>business@cambricon.com</p></span>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+            <div class="item item2">
+                <strong>案例二</strong>
+                <span><p>sales@cambricon.com</p></span>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+            <div class="item item3">
+                <strong>案例三</strong>
+                <span><p>media@cambricon.com</p></span>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+            <div class="item item4">
+                <strong>案例四</strong>
+                <span><p><a href="http://joinus.cambricon.com" target="_blank">joinus.cambricon.com</a></p></span>
+            </div>
+        </div>
+    </div>
+</div>
+<a name="nav5" id="nav5"></a>
+<div class="scroll-nav page-cp-box-tit page-hy-tit">
+    <div class="container">
+        <div class="tit wow fadeInUpa">
+            <h2>合作企业</h2>
+        </div>
+    </div>
+</div>
+
+<div class="page-ab-box5 container wow fadeInUpa index-box5">
+    <div class="container">
+        <ul>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-1.jpg}" alt="阿里巴巴" /></a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-2.jpg}" alt="AMAX" /></a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-3.jpg}" alt="百度" /></a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-4.jpg}" alt="的卢深视" /></a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-5.jpg}" alt="联想" /></a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-6.jpg}" alt="浪潮" /></a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer"><img th:src="@{/static/home/img/ad-7.jpg}" alt="SIGM" /></a></li>
+        </ul>
+    </div>
+    <!--<div class="row">
+        <div class="col-xs-6">
+            <div class="item">
+                <strong>北京</strong>
+                <p>北京市海淀区知春路7号致真大厦D座11、14、16层</p>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="item">
+                <strong>上海</strong>
+                <p>上海市浦东新区同汇路168号B座6层</p>
+                <p>上海市浦东新区祖冲之路2290号展想广场1号楼1106</p>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="item"><strong>深圳</strong>深圳市南山区桃园路田厦金牛广场A座35层</div>
+        </div>
+        <div class="col-xs-6">
+            <div class="item">
+                <strong>合肥</strong>
+                <p>合肥市蜀山区望江西路99号安高广场1503室</p>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="item">
+                <strong>西安</strong>
+                <p>西安市未央区沣东新城红光大道中俄丝路创新园银河B座7层</p>
+            </div>
+        </div>
+    </div>-->
+</div>
+
+<a name="nav6" id="nav6"></a>
+<div class="scroll-nav page-cp-box-tit page-hy-tit">
+    <div class="container">
+        <div class="tit wow fadeInUpa">
+            <h2>服务</h2>
+        </div>
+    </div>
+</div>
+<div class="page-ab-box5 container wow fadeInUpa">
+
+</div>
+<footer th:include="home/footer :: footer"></footer>
+<script type="text/javascript">
+    $('#navli a').each(function(){
+        if ($(this).attr("href")=='javaScript:;') {
+            $(this).addClass("no_pointer");
+        }
+
+    });
+</script>
+
+<script th:src="@{/static/home/js/layui/layui.js}"></script>
+<script th:src="@{/static/home/js/layui/config.js}"></script>
+<script th:src="@{/static/home/js/swiper.js}"></script>
+<script th:src="@{/static/home/js/video.js/video.js}"></script>
+<script th:src="@{/static/home/js/jquery.appear.js}"></script>
+<script th:src="@{/static/home/js/jquery.countTo.js}"></script>
+<script th:src="@{/static/home/js/jquery.tap.js}"></script>
+<script th:src="@{/static/home/js/bootstrap/js/bootstrap.js}"></script>
+<script th:src="@{/static/home/js/gd.js}"></script>
+<script th:src="@{/static/home/js/jquery.fancybox.js}"></script>
+<script th:src="@{/static/home/js/wow.js}"></script>
+<script th:src="@{/static/home/js/jquery-ui.min.js}"></script>
+<script th:src="@{/static/home/js/page.js}"></script>
+</body>
+</html>

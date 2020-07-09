@@ -1,0 +1,238 @@
+<!--<!DOCTYPE html>-->
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <title>琴智科技</title>
+    <meta name="keywords" content="琴智科技；疫情防控；智慧城市；智慧产业；" />
+    <meta name="description" content="" />
+    <meta name="robots" content="All" />
+    <link rel="shortcut icon" th:href="@{/static/home/img/favicon.ico}"/>
+    <link th:href="@{/static/home/js/bootstrap/css/less/bootstrap.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/css/font-awesome.min.css}" rel="stylesheet">
+    <link th:href="@{/static/home/css/swiper.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/js/layui/css/layui.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/animation.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/iconfont.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/video-js.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/jquery.fancybox.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/style.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/cp-p3.css}" rel="stylesheet" type="text/css" />
+    <script th:src="@{/static/home/js/jquery-1.12.4.min.js}"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?08bf0a6e04a9cb9128b9e26f3355b392";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+
+
+        })();
+    </script>
+
+</head>
+<body>
+
+<header th:include="home/header :: header"></header>
+
+<div class="page-banner" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/platform_head.jpg)'">
+    <div class="txt wow fadeInUpa">
+        <h2>平台介绍</h2>
+        <p></p>
+    </div>
+</div>
+
+<div class="page-nav page-nav-md">
+    <div class="container conth">
+        <div class="page-nav-right">
+            <div class="page-nav-right-md" id="page-nav-md-a">
+                <a th:if="${cusdomQuery.nav} eq 'nav1'" href="#nav1" class="active">平台背景介绍</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav1'" href="#nav1">平台背景介绍</a>
+                <a th:if="${cusdomQuery.nav} eq 'nav2'" href="#nav2" class="active">平台项目介绍</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav2'" href="#nav2">平台项目介绍</a>
+                <a th:if="${cusdomQuery.nav} eq 'nav3'" href="#nav3" class="active">平台使用网络链接</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav3'" href="#nav3">平台使用网络链接</a>
+            </div>
+        </div>
+    </div>
+</div>
+<a name="nav1" id="nav1"></a>
+<div class="scroll-nav page-cp-box-tit page-hy-tit">
+    <div class="container">
+        <div class="tit wow fadeInUpa">
+            <h2>平台背景介绍</h2>
+        </div>
+    </div>
+</div>
+
+<div class="page-ab-box2 wow fadeInUpa" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/weinfo_bg2.jpg)'">
+    <div class="container">
+        <div class="item">
+            <div class="txt">
+                <h3>横琴先进智能计算平台---</h3>
+                <div>横琴先进智能计算平台由中科院、广东省、珠海市、横琴新区共同在横琴落地建设，争取挂牌成为“国家智能计算机研究开发中心 （横琴）”，同时拟在港澳设立分中心。</div>
+                <div>&nbsp;</div>
+                <div>该计算平台是基于中科院战略性先导专项“国产安全可控先进计算机系统”的重要研究成果，全系列使用中科曙光服务器及中科寒武纪AI加速卡（神经元网络专用芯片）。横琴先进智能计算平台整体规划分为三期，完全建成后算力将达到4Eops（百亿亿次/秒），截至2019年底已建成算力1.16 Eops。</div>
+                <div>&nbsp;</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a name="nav2" id="nav2"></a>
+<div class="scroll-nav page-cp-box-tit page-hy-tit page-cp-p2-box1">
+    <div class="container">
+        <div class="tit wow fadeInUpa">
+            <h2>平台项目介绍</h2>
+        </div>
+
+        <div class="item">
+            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/tec_0.jpg}" alt="思元270系列智能加速卡" /></div>
+            <div class="txt">
+                <div class="tit wow fadeInUpa">
+                    <h2>项目概述<small>面向高能效比云端AI推理</small></h2>
+                </div>
+                <div class="body wow fadeInUpa">
+                    <p>横琴先进智能计算平台为政府、企业及科研院所等提供智能计算软硬件服务、资源共享及调度、交叉研究支撑、数据集中存储及备份、产业创新等五大功能性服务，成为“立足横琴、面向粤港澳大湾区、辐射全国”的集智能计算服务、交叉研究和产业创新三位一体的重大科技基础设施和公共服务平台，同时引入市场化运营模式，创新体制机制，为粤港澳大湾区建设国际科技创新中心贡献卓越力量。</p>
+<!--                    <p>思元270采用寒武纪MLUv02架构，可支持视觉、语音、自然语言处理以及传统机器学习等高度多样化的人工智能应用，更为视觉应用集成了充裕的视频和图像编解码硬件单元。</p>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="scroll-nav page-cp-p2-box1">
+    <div class="container">
+        <div class="item">
+            <div class="img wow fadeInUpa"><img src="/uploadfile/2019/1111/20191111021059425.jpg" alt="思元270系列智能加速卡" /></div>
+            <div class="txt">
+                <div class="tit wow fadeInUpa">
+                    <h2>思元270系列智能加速卡<small>面向高能效比云端AI推理</small></h2>
+                </div>
+                <div class="body wow fadeInUpa">
+                    <p>思元270集成了寒武纪在处理器架构领域的一系列创新性技术，处理非稀疏深度学习模型的理论峰值性能提升至上一代思元100的4倍，达到128TOPS(INT8)；同时兼容INT4和INT16运算，理论峰值分别达到256TOPS和64TOPS；支持浮点运算和混合精度运算。</p>
+                    <p>思元270采用寒武纪MLUv02架构，可支持视觉、语音、自然语言处理以及传统机器学习等高度多样化的人工智能应用，更为视觉应用集成了充裕的视频和图像编解码硬件单元。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<div class="page-cp-p3-box1">
+    <div class="container">
+        <div class="tit">
+            <h3>核心优势</h3>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4">
+                <div class="item">
+                    <div class="img wow fadeInUpa">
+                        <img th:src="@{/static/home/img/tec_1.png}" alt="疫情防控">
+                    </div>
+                    <div class="txt wow fadeInUpa">
+                        <h3>疫情防控</h3>
+                        <p>针对SARS-CoV、MERS-CoV、2019-nCoV等冠状病毒引起的突发公共卫生事件，通过智能算力协助科研机构。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="item">
+                    <div class="img wow fadeInUpa">
+                        <img th:src="@{/static/home/img/tec_2.png}" alt="智慧城市">
+                    </div>
+                    <div class="txt wow fadeInUpa">
+                        <h3>智慧城市</h3>
+                        <p>包括城市实时仿真、智能交通、智能安防等</p>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="item">
+                    <div class="img wow fadeInUpa">
+                        <img th:src="@{/static/home/img/tec_3.png}" alt=智慧产业>
+                    </div>
+                    <div class="txt wow fadeInUpa">
+                        <h3>智慧产业</h3>
+                        <p>包括智能医疗、智能教育、智能制造、智能金融、智能港航、智能物流、智能生活娱乐、智能消费娱乐等</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a name="nav3" id="nav3"></a>
+<div class="scroll-nav page-cp-box-tit page-hy-tit">
+    <div class="container">
+        <div class="tit wow fadeInUpa">
+            <h2>平台使用网络链接</h2>
+        </div>
+    </div>
+</div>
+
+<div class="page-ab-box3 wow fadeInUpa index-box5" >
+    <div class="container">
+        <ul>
+            <li class="wow fadeInUpa">
+                <a href="http://www.baidu.com" class="no_pointer" target="_blank">
+                    链接一
+                    <span>www.baidu.com</span>
+                </a>
+            </li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer">
+                链接二
+                <span>www.baidu.com</span>
+            </a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer">
+                链接三
+                <span>www.baidu.com</span>
+            </a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer">
+                链接四
+                <span>www.baidu.com</span>
+            </a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer">
+                链接五
+                <span>www.baidu.com</span>
+            </a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer">
+                链接六
+                <span>www.baidu.com</span>
+            </a></li>
+            <li class="wow fadeInUpa"><a href="javascript:;" class="no_pointer">
+                链接七
+                <span>www.baidu.com</span>
+            </a></li>
+        </ul>
+    </div>
+</div>
+
+<footer th:include="home/footer :: footer"></footer>
+<script type="text/javascript">
+    $('#navli a').each(function(){
+        if ($(this).attr("href")=='javaScript:;') {
+            $(this).addClass("no_pointer");
+        }
+
+    });
+</script>
+
+<script th:src="@{/static/home/js/layui/layui.js}"></script>
+<script th:src="@{/static/home/js/layui/config.js}"></script>
+<script th:src="@{/static/home/js/swiper.js}"></script>
+<script th:src="@{/static/home/js/video.js/video.js}"></script>
+<script th:src="@{/static/home/js/jquery.appear.js}"></script>
+<script th:src="@{/static/home/js/jquery.countTo.js}"></script>
+<script th:src="@{/static/home/js/jquery.tap.js}"></script>
+<script th:src="@{/static/home/js/bootstrap/js/bootstrap.js}"></script>
+<script th:src="@{/static/home/js/gd.js}"></script>
+<script th:src="@{/static/home/js/jquery.fancybox.js}"></script>
+<script th:src="@{/static/home/js/wow.js}"></script>
+<script th:src="@{/static/home/js/jquery-ui.min.js}"></script>
+<script th:src="@{/static/home/js/page.js}"></script>
+</body>
+</html>

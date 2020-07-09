@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cambricon.inestia.modules.system.mapper.ProductMapper">
+    <resultMap id="BaseResultMap" type="com.cambricon.inestia.modules.system.po.Product" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="root_name" property="rootName" jdbcType="VARCHAR" />
+        <result column="parent_name" property="parentName" jdbcType="BIGINT" />
+        <result column="node_name" property="nodeName" jdbcType="BIGINT" />
+        <result column="url" property="url" jdbcType="VARCHAR" />
+        <result column="dr" property="dr" jdbcType="BIT" />
+    </resultMap>
+</mapper>

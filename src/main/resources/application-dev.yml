@@ -1,0 +1,37 @@
+logging:
+  level:
+    root: info
+    org:
+      springframework: info
+      apache:
+        ibatis:
+          io: info
+    com:
+      modules:
+        system:
+          mapper: info
+
+server:
+  port: 9000
+  servlet:
+    context-path: /inestia-web
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      initial-size: 1
+      max-active: 20
+      min-idle: 1
+      stat-view-servlet:
+        allow: true
+      test-on-borrow: true
+    hikari:
+      minimum-idle: 3
+      maximum-pool-size: 10
+      max-lifetime: 30000
+      connection-test-query: SELECT 1
+    password: 113722@hp
+    url: jdbc:mysql://58.87.86.84:3306/inestia_?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+  thymeleaf:
+    cache: false
