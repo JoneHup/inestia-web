@@ -10251,3 +10251,12 @@ footer {
 .page-ab-box4.tab-content .address{border:1px solid #ccc; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; padding:20px; min-height:140px; margin-bottom:30px;}
 .page-ab-box4.tab-content .address b{display:block; color:#920783; font-size:18px; font-weight:400; margin-bottom:5px;}
 .page-ab-box4.tab-content .address strong{display:block; margin-bottom:5px; font-size:16px;}
+
+
+.about-sec3 ul{ padding-top: 50px;}
+.about-sec3 li{ float: left; background: #F5F5F5; width: 48%; text-align: center; margin-bottom: 30px; overflow: hidden; padding:45px 0;
+    font-weight: bold; color: #014099; font-size: 28px; transition: all 0.6s; border:2px solid transparent}
+.about-sec3 .l1{ width: 100%;}
+.about-sec3 .l3{ float: right;}
+.about-sec3 li img{ display: inline-block; vertical-align: middle; margin-right: 20px;}
+.about-sec3 li:hover{ background: #fff; border:2px solid #014099}
