@@ -221,13 +221,13 @@
         <div class="page-news-page">
             <ul>
                 <a class="a1">[[${resultSet.total}]]条</a>
-                <a th:if="${resultSet.currentPage} gt 1" th:href="@{/home/news(currentPage=${resultSet.currentPage -1},offset=${0},limit=${6},order=${'desc'})}" class="a1">上一页</a>
+                <a th:if="${resultSet.currentPage} gt 1" th:href="@{/home/news(currentPage=${resultSet.currentPage -1},offset=${(resultSet.currentPage -2)*6},limit=${6},order=${'desc'})}" class="a1">上一页</a>
                 <a th:if="${resultSet.currentPage} le 1" href="javascript:void(0)" class="a1">上一页</a>
                 <th th:each="index : ${resultSet.pageList}">
                     <span th:if="${index} eq ${resultSet.currentPage}">[[${resultSet.currentPage}]]</span>
-                    <a th:if="${index} ne ${resultSet.currentPage}" th:href="@{/home/news(currentPage=${index},offset=${0},limit=${6},order=${'desc'})}">[[${index}]]</a>
+                    <a th:if="${index} ne ${resultSet.currentPage}" th:href="@{/home/news(currentPage=${index},offset=${(index -1)*6},limit=${6},order=${'desc'})}">[[${index}]]</a>
                 </th>
-                <a th:if="${resultSet.currentPage} lt ${resultSet.totalPage}" th:href="@{/home/news(currentPage=${resultSet.currentPage +1},offset=${0},limit=${6},order=${'desc'})}" class="a1">下一页</a>
+                <a th:if="${resultSet.currentPage} lt ${resultSet.totalPage}" th:href="@{/home/news(currentPage=${resultSet.currentPage +1},offset=${(resultSet.currentPage)*6},limit=${6},order=${'desc'})}" class="a1">下一页</a>
                 <a th:if="${resultSet.currentPage} ge ${resultSet.totalPage}" href="javascript:void(0)" class="a1">下一页</a>
             </ul>
         </div>
