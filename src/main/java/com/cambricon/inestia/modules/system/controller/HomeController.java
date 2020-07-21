@@ -1,11 +1,14 @@
 package com.cambricon.inestia.modules.system.controller;
 
 import com.cambricon.inestia.core.utils.PageResultSet;
+import com.cambricon.inestia.modules.system.po.Job;
 import com.cambricon.inestia.modules.system.po.News;
 import com.cambricon.inestia.modules.system.po.Product;
 import com.cambricon.inestia.modules.system.query.CustomQuery;
+import com.cambricon.inestia.modules.system.query.JobQuery;
 import com.cambricon.inestia.modules.system.query.NewsQuery;
 import com.cambricon.inestia.modules.system.query.ProductQuery;
+import com.cambricon.inestia.modules.system.service.JobService;
 import com.cambricon.inestia.modules.system.service.NewsService;
 import com.cambricon.inestia.modules.system.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +32,8 @@ public class HomeController {
     private NewsService newsService;
     @Autowired
     private ProductService productService;
+    @Autowired
+    private JobService jobService;
 
     @GetMapping("/index")
     public String home(NewsQuery newsQuery,Model model) {
@@ -64,6 +69,9 @@ public class HomeController {
     @GetMapping("/contactus")
     public String contactUs(CustomQuery cusdomQuery, Model model) {
         model.addAttribute("cusdomQuery", cusdomQuery);
+        JobQuery jobQuery = new JobQuery();
+        PageResultSet<Job> page = jobService.findByPage(jobQuery);
+        model.addAttribute("jobPage", page);
         return "home/contact";
     }
 

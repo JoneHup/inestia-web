@@ -97,6 +97,7 @@
                         switch (obj.type) {
                             //提交
                             case 'submit':
+                                console.log(obj)
                                 if (obj.form && obj.url) {
                                     e.preventDefault();
                                     if (/^@{(.*?)}$/g.test(obj.url)) {
@@ -158,6 +159,7 @@
                             default :
                                 error('[data-action]参数有误，请检查参数type是否有误');
                         }
+                        $('.modal').modal('hide');
                     }
                 });
                 //模态框隐藏的事件

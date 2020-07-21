@@ -71,40 +71,19 @@
 
 <div class="page-ab-box4 container wow fadeInUpa">
     <div class="row">
-        <div class="col-xs-6 col-sm-12">
-            <div class="item item_contact">
-                <strong>系统软件工程师：</strong>
-                <span><p>岗位描述：</p></span>
-                <span><p>我们正在进入人工智能的时代，深度学习处理器助力AI/DL的飞速发展，正在深刻地改变人们的工作和生活方式。在Cambricon从事系统软件工作，你会与其他团队深度合作, 从模块验证入手开发模块驱动到设计系统软件架构，利用设计模式的最佳实践，确保深度/机器学习应用高效地使用Combricon神经网络加速器。伴随着各位英才的能力成长，让我们共同努力“让机器更好的理解和服务人类”。 在这里你将承担的工作有：</p></span>
-                <span><p>1、负责寒武纪智能处理器平台的系统软件研发；</p>
-                        <p>2、独立开发Linux系统的驱动程序及底层SDK；</p>
-                        <p>3、负责智能加速卡的板级开发与调试；</p>
-                        <p>4、负责智能芯片的FPGA验证；</p>
-                        <p>5、优化系统性能和可靠性。</p></span>
-                <span><p>岗位要求：</p></span>
-                <span><p>1、毕业于计算机科学，计算机工程，信息学，电气工程，或数学，物理等相关学科；</p>
-                        <p>2、熟悉计算机体系结构；</p>
-                        <p>3、具备C编程语言的经验</p>
-                        <p>4、具备良好的沟通能力及团队合作意识</p>
-                        <p>5、优化系统性能和可靠性。</p></span>
-                <span><p>【工作地点】北京、上海张江、合肥、深圳</p></span>
+        <th th:each="row : ${jobPage.rows}">
+            <div class="col-xs-6 col-sm-12">
+                <div class="item item_contact">
+                    <strong>[[${row.jobName}]]</strong>
+                    <span><p>【岗位职责】</p></span>
+                    <span><p>[[${row.jobDescription}]]</p></span>
+                    <span><p>【岗位要求】</p></span>
+                    <span><p>[[${row.jobRequire}]]</p>
+                    <span><p>【工作地点】</p></span>
+                    <span><p>[[${row.jobsite}]]</p></span>
+                </div>
             </div>
-        </div>
-        <div class="col-xs-6 col-sm-12">
-            <div class="item item_contact">
-                <strong>深度学习编译器工程师：</strong>
-                <span><p>岗位描述：</p></span>
-                <span><p>在这里从事编译器及工具链开发工作将使能客户开发和运行更高效、更稳定、功耗更低的深度学习算法。 我们期待像你一样的优秀工程师加入编译组，共同开发高质量，高效能的工具链软件，并帮助客户开发和定制高性能算子。您将有机会参与到编译器和工具链研发的方方面面，如领域高级语言设计，编译优化算法的设计和实现，代码生成，调试工具，性能分析工具等多个软件模块。</p></span>
-                <span><p>1、掌握C++，具有良好的编程习惯；</p>
-                        <p>2、熟悉计算机基础算法和数据结构；</p>
-                        <p>3、 熟悉 Linux 开发环境；</p>
-                        <p>4、有良好的团队沟通和协调能力 。</p></span>
-                <span><p>岗位要求：</p></span>
-                <span><p>1、毕业于计算机科学，计算机工程，信息学，电气工程，或数学，物理等相关学科；</p>
-                        <p>2、熟悉计算机体系结构；</p></span>
-                <span><p>【工作地点】北京、上海张江</p></span>
-            </div>
-        </div>
+        </th>
     </div>
 </div>
 

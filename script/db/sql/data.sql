@@ -1,5 +1,5 @@
 INSERT INTO `sys_user` (`id`,`organization_id`,`username`,`password`,`salt`,`role_ids`,`group_ids`,`locked`) VALUES (1,1,'admin','d3c59d25033dbf980d29554025c23a75','8d78869f470951332959580424d4bf4f','1','1',0);
-INSERT INTO `sys_role` (`id`,`role`,`description`,`resource_ids`,`available`) VALUES (1,'admin','超级管理员','11,21,31,41,46,69,70',0);
+INSERT INTO `sys_role` (`id`,`role`,`description`,`resource_ids`,`available`) VALUES (1,'admin','超级管理员','11,21,31,41,46,69,70,75',0);
 
 
 INSERT INTO `sys_organization` (`id`,`name`,`parent_id`,`parent_ids`,`available`,`priority`,`leaf`) VALUES (1,'用友',0,'0/',1,0,0);
@@ -35,7 +35,11 @@ INSERT INTO `sys_resource` (`id`,`name`,`type`,`url`,`parent_id`,`parent_ids`,`p
 INSERT INTO `sys_resource` (`id`,`name`,`type`,`url`,`parent_id`,`parent_ids`,`permission`,`available`,`icon`,`priority`,`leaf`) VALUES (72,'新闻修改','BUTTON','',70,'0/1/70/','news:update',1,NULL,NULL,0);
 INSERT INTO `sys_resource` (`id`,`name`,`type`,`url`,`parent_id`,`parent_ids`,`permission`,`available`,`icon`,`priority`,`leaf`) VALUES (73,'新闻删除','BUTTON','',70,'0/1/70/','news:delete',1,NULL,NULL,0);
 INSERT INTO `sys_resource` (`id`,`name`,`type`,`url`,`parent_id`,`parent_ids`,`permission`,`available`,`icon`,`priority`,`leaf`) VALUES (74,'新闻查看','BUTTON','',70,'0/1/70/','news:view',1,NULL,NULL,0);
-
+INSERT INTO `sys_resource` (`id`,`name`,`type`,`url`,`parent_id`,`parent_ids`,`permission`,`available`,`icon`,`priority`,`leaf`) VALUES (75,'发招聘','MENU','#job',69,'0/1/69/','job:*',1,'fa fa-history',NULL,1);
+INSERT INTO `sys_resource` (`id`,`name`,`type`,`url`,`parent_id`,`parent_ids`,`permission`,`available`,`icon`,`priority`,`leaf`) VALUES (76,'招聘新增','BUTTON','',75,'0/1/75/','job:create',1,NULL,NULL,0);
+INSERT INTO `sys_resource` (`id`,`name`,`type`,`url`,`parent_id`,`parent_ids`,`permission`,`available`,`icon`,`priority`,`leaf`) VALUES (77,'招聘修改','BUTTON','',75,'0/1/75/','job:update',1,NULL,NULL,0);
+INSERT INTO `sys_resource` (`id`,`name`,`type`,`url`,`parent_id`,`parent_ids`,`permission`,`available`,`icon`,`priority`,`leaf`) VALUES (78,'招聘删除','BUTTON','',75,'0/1/75/','job:delete',1,NULL,NULL,0);
+INSERT INTO `sys_resource` (`id`,`name`,`type`,`url`,`parent_id`,`parent_ids`,`permission`,`available`,`icon`,`priority`,`leaf`) VALUES (79,'招聘查看','BUTTON','',75,'0/1/75/','job:view',1,NULL,NULL,0);
 
 INSERT INTO `sys_product`(`id`, `root_name`, `parent_name`, `node_name`, `url`, `dr`) VALUES (1, '横琴先进智能计算平台的产品', '产品1', NULL, NULL, 0);
 INSERT INTO `sys_product`(`id`, `root_name`, `parent_name`, `node_name`, `url`, `dr`) VALUES (2, '横琴先进智能计算平台的产品', '产品2', NULL, NULL, 0);

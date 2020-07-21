@@ -30,8 +30,9 @@ spring:
       maximum-pool-size: 10
       max-lifetime: 30000
       connection-test-query: SELECT 1
-    password: 113722@hp
-    url: jdbc:mysql://58.87.86.84:3306/inestia_?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    password: 1234@qwer
+ #   url: jdbc:mysql://120.236.247.203:37005/qinzhi_db?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://localhost:3306/qinzhi_db?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
     username: root
   thymeleaf:
     cache: false
