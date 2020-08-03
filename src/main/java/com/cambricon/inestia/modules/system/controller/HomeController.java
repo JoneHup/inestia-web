@@ -18,6 +18,10 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 /**
  * @Description: TODO
  * @author: hupengk
@@ -63,16 +67,16 @@ public class HomeController {
     @GetMapping("/weinfo")
     public String weInfo(CustomQuery cusdomQuery,Model model) {
         model.addAttribute("cusdomQuery", cusdomQuery);
+        JobQuery jobQuery = new JobQuery();
+        PageResultSet<Job> page = jobService.findByPage(jobQuery);
+        model.addAttribute("jobPage", page);
         return "home/weinfo";
     }
 
     @GetMapping("/contactus")
     public String contactUs(CustomQuery cusdomQuery, Model model) {
         model.addAttribute("cusdomQuery", cusdomQuery);
-        JobQuery jobQuery = new JobQuery();
-        PageResultSet<Job> page = jobService.findByPage(jobQuery);
-        model.addAttribute("jobPage", page);
-        return "home/contact";
+        return "solution";
     }
 
     @GetMapping("/platform")
@@ -85,6 +89,14 @@ public class HomeController {
     public String product(ProductQuery productQuery, Model model) {
         Product product = productService.findById(productQuery);
         model.addAttribute("product", product);
+        if (! StringUtils.isEmpty(productQuery.getProductName())) {
+            return "home/product_".concat(productQuery.getProductName());
+        }
         return "home/product";
+    }
+
+    @GetMapping("/map")
+    public String map() {
+        return "home/map";
     }
 }

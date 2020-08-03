@@ -12,6 +12,8 @@ public class ProductQuery {
 
     private Boolean dr;
 
+    private String productName;
+
     public Long getId() {
         return id;
     }
@@ -26,5 +28,13 @@ public class ProductQuery {
 
     public void setDr(Boolean dr) {
         this.dr = dr;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 }

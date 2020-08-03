@@ -29,10 +29,13 @@
                                 <a href="javaScript:;" >横琴先进智能计算平台的产品</a>
                                 <ul>
                                     <li>
-                                        <a th:href="@{/home/product(id=${1})}">产品1</a>
+                                        <a th:href="@{/home/product(id=${11})}">推理计算型</a>
                                     </li>
                                     <li>
-                                        <a th:href="@{/home/product(id=${2})}">产品2</a>
+                                        <a th:href="@{/home/product(id=${12})}">训练计算型</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${13})}">CPU通用计算型</a>
                                     </li>
                                 </ul>
                             </li>
@@ -45,10 +48,13 @@
                                         <a href="javaScript:;" >系列1</a>
                                         <ul>
                                             <li>
-                                                <a th:href="@{/home/product(id=${3})}">产品1</a>
+                                                <a th:href="@{/home/product(id=${21},productName=${'siyuan100'})}">思元100</a>
                                             </li>
                                             <li>
-                                                <a th:href="@{/home/product(id=${4})}">产品2</a>
+                                                <a th:href="@{/home/product(id=${22})}">思元270</a>
+                                            </li>
+                                            <li>
+                                                <a th:href="@{/home/product(id=${23})}">全国产</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -56,16 +62,24 @@
                                         <a href="javaScript:;" >系列2</a>
                                         <ul>
                                             <li>
-                                                <a th:href="@{/home/product(id=${5})}">产品1</a>
+                                                <a th:href="@{/home/product(id=${24})}">产品1</a>
                                             </li>
                                             <li>
-                                                <a th:href="@{/home/product(id=${6})}">产品1</a>
+                                                <a th:href="@{/home/product(id=${25})}">产品1</a>
                                             </li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
+                    </div>
+                </li>
+                <li class="">
+                    <a th:href="@{/home/contactus}">解决方案</a>
+                    <div class="navli-nav cp">
+                        <p class="fanhui">
+                            <span class="layui-icon layui-icon-left"></span>返回
+                        </p>
                         <ul>
                             <li>
                                 <a href="javaScript:;" >产品的各项实际应用</a>
@@ -74,10 +88,10 @@
                                         <a href="javaScript:;" >智慧城市</a>
                                         <ul>
                                             <li>
-                                                <a th:href="@{/home/product(id=${7})}">城市实时仿真</a>
+                                                <a th:href="@{/home/product(id=${31})}">城市实时仿真</a>
                                             </li>
                                             <li>
-                                                <a th:href="@{/home/product(id=${8})}">智能交通系统</a>
+                                                <a th:href="@{/home/product(id=${32})}">智能交通系统</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -85,32 +99,22 @@
                                         <a href="javaScript:;" >智慧产业</a>
                                         <ul>
                                             <li>
-                                                <a th:href="@{/home/product(id=${9})}">智能教育</a>
+                                                <a th:href="@{/home/product(id=${33})}">智能教育</a>
                                             </li>
                                             <li>
-                                                <a th:href="@{/home/product(id=${10})}">智能物流</a>
+                                                <a th:href="@{/home/product(id=${34})}">智能物流</a>
                                             </li>
                                             <li>
-                                                <a th:href="@{/home/product(id=${11})}">智能医疗</a>
+                                                <a th:href="@{/home/product(id=${35})}">智能医疗</a>
                                             </li>
                                             <li>
-                                                <a th:href="@{/home/product(id=${12})}">智能金融</a>
+                                                <a th:href="@{/home/product(id=${36})}">智能金融</a>
                                             </li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
-                        <!--<ul>
-                            <li>
-                                <a href="javaScript:;" >软件开发平台</a>
-                                <ul>
-                                    <li>
-                                        <a href="/index.php?m=content&c=index&a=lists&catid=71" >Cambricon Neuware</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>-->
                     </div>
                 </li>
                 <li class="">
@@ -149,15 +153,21 @@
                             <li>
                                 <a th:href="@{/home/weinfo(nav=${'nav3'})}">企业文化</a>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a th:href="@{/home/weinfo(nav=${'nav4'})}">相关案例</a>
+                            </li>-->
+                            <li>
+                                <a th:href="@{/home/weinfo(nav=${'nav4'})}">合作企业</a>
                             </li>
                             <li>
-                                <a th:href="@{/home/weinfo(nav=${'nav5'})}">合作企业</a>
+                                <a th:href="@{/home/weinfo(nav=${'nav5'})}">招聘事宜</a>
                             </li>
                             <li>
+                                <a th:href="@{/home/weinfo(nav=${'nav6'})}">公司联系方式</a>
+                            </li>
+                            <!--<li>
                                 <a th:href="@{/home/weinfo(nav=${'nav6'})}">服务</a>
-                            </li>
+                            </li>-->
                             <!--<li>
                                 <a href="javaScript:;"  target="_blank"  >资料库</a>
                                 <ul>
@@ -186,54 +196,6 @@
                         </ul>
                     </div>
                 </li>
-                <li class="">
-                    <!-- 首页 加入我们  关于我们  可以点击-->
-                    <a th:href="@{/home/contactus}">联系我们</a>
-                    <div class="navli-nav"><!-- 加入我们-->
-                        <p class="fanhui">
-                            <span class="layui-icon layui-icon-left"></span>返回
-                        </p>
-                        <ul>
-                            <li>
-                                <a th:href="@{/home/contactus(nav=${'nav1'})}">招聘事宜</a>
-                            </li>
-
-                            <li>
-                                <a th:href="@{/home/contactus(nav=${'nav2'})}">公司联系方式</a>
-                            </li>
-
-                            <li>
-                                <a th:href="@{/home/contactus(nav=${'nav3'})}">合作事宜</a>
-                            </li>
-                            <li>
-                                <a th:href="@{/home/contactus(nav=${'nav4'})}">招商</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <!--<li class="">
-                    &lt;!&ndash; 首页 加入我们  关于我们  可以点击&ndash;&gt;
-                    <a href="/index.php?m=content&c=index&a=lists&catid=7">关于我们</a>
-                    <div class="navli-nav">&lt;!&ndash; 关于我们&ndash;&gt;
-                        <p class="fanhui">
-                            <span class="layui-icon layui-icon-left"></span>返回
-                        </p>
-                        <ul>
-                            <li>
-                                <a href="/index.php?m=content&c=index&a=lists&catid=7#nav1">使命与愿景</a>
-                            </li>
-                            <li>
-                                <a href="/index.php?m=content&c=index&a=lists&catid=7#nav2">寒武纪介绍</a>
-                            </li>
-                            <li>
-                                <a href="/index.php?m=content&c=index&a=lists&catid=7#nav3">联系我们</a>
-                            </li>
-                            <li>
-                                <a href="/index.php?m=content&c=index&a=lists&catid=7#nav4">公司地址</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>-->
             </ul>
         </nav>
     </div>
