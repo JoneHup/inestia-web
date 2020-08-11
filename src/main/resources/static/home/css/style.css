@@ -50,7 +50,7 @@ a {
     color: #333;
     transition: all 0.4s;
 }
-img {
+.container img {
     border: 0 none;
     max-width: 100%;
     max-height: 100%;
@@ -77,6 +77,32 @@ header .container {
     position: relative;
     height: 100%;
 }
+header .container_weinfo {
+    position: relative;
+    height: 100%;
+}
+.container_weinfo {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 768px) {
+    .container_weinfo {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container_weinfo {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container_weinfo {
+        width: 1170px;
+    }
+}
+
 header .logo {
     display: none;
 }
@@ -678,6 +704,11 @@ div.navli-nav li.active > a {
         width: 1400px;
     }
     .container {
+        width: 1400px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .container_weinfo {
         width: 1400px;
         padding-left: 0;
         padding-right: 0;

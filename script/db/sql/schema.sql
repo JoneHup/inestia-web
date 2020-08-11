@@ -7,6 +7,7 @@ drop table if exists sys_log;
 drop table if exists sys_product;
 drop table if exists sys_news;
 drop table if exists sys_news_content;
+drop table if exists sys_job;
 
 create table sys_user (
   id bigint auto_increment COMMENT '编号',

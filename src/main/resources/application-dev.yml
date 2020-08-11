@@ -32,8 +32,8 @@ spring:
       connection-test-query: SELECT 1
     password: 1234@qwer
 #    url: jdbc:mysql://120.236.247.203:37005/qinzhi_db?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
-#    url: jdbc:mysql://192.168.16.252:3306/qinzhi_db?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
-    url: jdbc:mysql://localhost:3306/qinzhi_db?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://192.168.16.252:3306/qinzhi_db?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+#    url: jdbc:mysql://localhost:3306/qinzhi_db?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8&&useSSL=false
     username: root
   thymeleaf:
     cache: false
