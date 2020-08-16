@@ -16,11 +16,14 @@ import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.weekend.Weekend;
 import tk.mybatis.mapper.weekend.WeekendCriteria;
 
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * @Description: TODO
@@ -62,10 +65,22 @@ public class NewsServiceImpl implements NewsService {
                     e.setModifyTime(DateUtil.toDateTimeString(e.getModifyDate()));
         }));
 
-        for (Object o : page.getResult()) {
+        List list = page.getResult();
+        if (! CollectionUtils.isEmpty(list)) {
+            Iterator iterator = list.iterator();
+            while (iterator.hasNext()){
+                News news = (News) iterator.next();
+                if (newsQuery.getNewsId() == news.getId()) {
+                    iterator.remove();
+                }
+                news.setContent(newsContentMapper.selectByPrimaryKey(news.getPk_content()).getContent());
+            }
+        }
+
+       /* for (Object o : page.getResult()) {
             News news = (News)o;
             news.setContent(newsContentMapper.selectByPrimaryKey(news.getPk_content()).getContent());
-        }
+        }*/
 
         resultSet.setRows(page.getResult());
         resultSet.setRandomRows(page.getResult());
@@ -112,6 +127,16 @@ public class NewsServiceImpl implements NewsService {
         News news = newsMapper.selectByPrimaryKey(newsQuery.getNewsId());
         NewsContent newsContent = newsContentMapper.selectByPrimaryKey(news.getPk_content());
         news.setContent(newsContent.getContent());
+        return news;
+    }
+
+    @Override
+    public News findLatestNews() {
+        News news = newsMapper.selectLatestNews();
+        if (null != news) {
+            NewsContent newsContent = newsContentMapper.selectByPrimaryKey(news.getPk_content());
+            news.setContent(newsContent.getContent());
+        }
         return news;
     }
 }

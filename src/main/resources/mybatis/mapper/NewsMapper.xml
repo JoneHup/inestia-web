@@ -14,4 +14,8 @@
         <result column="modify_date" property="modifyDate" jdbcType="TIMESTAMP" />
         <result column="dr" property="dr" jdbcType="BIT" />
     </resultMap>
+
+    <select id="selectLatestNews" resultMap="BaseResultMap">
+        SELECT * FROM `sys_news` t where t.dr = 0 order by t.modify_date desc limit 1;
+    </select>
 </mapper>

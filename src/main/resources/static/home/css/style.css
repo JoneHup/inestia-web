@@ -17,6 +17,9 @@
 .fashet{
     margin-top: 40px;
 }
+.fashet_1{
+    margin-top: 350px;
+}
 .ttable {
     display: table;
     width: 100%;
@@ -9545,7 +9548,7 @@ footer {
 .page-ab-box5 .item strong:before {
     position: absolute;
     content: "";
-    background: url(../img/icon/icon-0.png) no-repeat center center;
+    /*background: url(../img/icon/icon-0.png) no-repeat center center;*/
     background-size: contain;
     width: 20px;
     height: 20px;

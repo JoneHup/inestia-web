@@ -15,4 +15,6 @@ public interface NewsService {
     void deleteNews(Long id);
 
     News findById(NewsQuery newsQuery);
+
+    News findLatestNews();
 }

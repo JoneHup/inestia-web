@@ -40,9 +40,9 @@
 
 <header th:include="home/header :: header"></header>
 
-<div class="page-banner" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/product_head.jpg)'">
+<div class="page-banner" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/we_head.jpg)'">
     <div class="txt wow fadeInUpa">
-        <h2>公司介绍</h2>
+        <h2>关于我们</h2>
         <p></p>
     </div>
 </div>
@@ -55,14 +55,12 @@
                 <a th:if="${cusdomQuery.nav} ne 'nav1'" href="#nav1">公司简介</a>
                 <a th:if="${cusdomQuery.nav} eq 'nav2'" href="#nav2" class="active">公司愿景</a>
                 <a th:if="${cusdomQuery.nav} ne 'nav2'" href="#nav2">公司愿景</a>
-                <a th:if="${cusdomQuery.nav} eq 'nav3'" href="#nav3" class="active">企业文化</a>
-                <a th:if="${cusdomQuery.nav} ne 'nav3'" href="#nav3">企业文化</a>
-                <a th:if="${cusdomQuery.nav} eq 'nav4'" href="#nav4" class="active">合作伙伴</a>
-                <a th:if="${cusdomQuery.nav} ne 'nav4'" href="#nav4">合作伙伴</a>
-                <a th:if="${cusdomQuery.nav} eq 'nav5'" href="#nav5" class="active">招聘事宜</a>
-                <a th:if="${cusdomQuery.nav} ne 'nav5'" href="#nav5">招聘事宜</a>
-                <a th:if="${cusdomQuery.nav} eq 'nav6'" href="#nav6" class="active">公司联系方式</a>
-                <a th:if="${cusdomQuery.nav} ne 'nav6'" href="#nav6">公司联系方式</a>
+                <a th:if="${cusdomQuery.nav} eq 'nav4'" href="#nav3" class="active">合作伙伴</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav4'" href="#nav3">合作伙伴</a>
+                <a th:if="${cusdomQuery.nav} eq 'nav5'" href="#nav4" class="active">招聘事宜</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav5'" href="#nav4">招聘事宜</a>
+                <a th:if="${cusdomQuery.nav} eq 'nav6'" href="#nav5" class="active">联系我们</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav6'" href="#nav5">联系我们</a>
             </div>
         </div>
     </div>
@@ -81,7 +79,7 @@
         <div class="item">
             <div class="txt">
                 <h3>广东琴智科技研究院有限公司---</h3>
-                <div>2019年8月8日，广东琴智科技研究院有限公司由中科寒武纪科技股份有限公司和珠海大横琴科技发展有限公司合资成立，负责横琴先进智能计算平台的运营、推广和维护服务，开展AI中台系统研发。致力研发智慧城市行业AI解决方案，依托平台提供创新创业、教育科研、资讯分享、论坛大赛等服务，构建智能芯片的生态合作圈，倾力打造“核心平台+数据运营+生态合作”的智能产业生态圈，促进人工智能技术与传统产业结合，面向全球提供人工智能算力服务。</div>
+                <div>2019年8月8日，广东琴智科技研究院有限公司由中科寒武纪科技股份有限公司和珠海大横琴科技发展有限公司合资成立，负责横琴人工智能超算中心的运营、推广和维护服务，开展AI中台系统研发。致力研发智慧城市行业AI解决方案，依托平台提供创新创业、教育科研、资讯分享、论坛大赛等服务，构建智能芯片的生态合作圈，倾力打造“核心平台+数据运营+生态合作”的智能产业生态圈，促进人工智能技术与传统产业结合，面向全球提供人工智能算力服务。</div>
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
             </div>
@@ -115,29 +113,6 @@
 <div class="scroll-nav page-cp-box-tit page-hy-tit">
     <div class="container">
         <div class="tit wow fadeInUpa">
-            <h2>企业文化</h2>
-        </div>
-    </div>
-</div>
-
-<div class="page-ab-box3 wow fadeInUpa" >
-    <div class="container">
-        <div class="item">
-            <div class="txt">
-                <h3>横琴先进智能计算平台</h3>
-                <div>&nbsp;</div>
-                <div>我们遵循国际通行的4S原则（安全、稳定、快速、服务）竭诚为用户提供7*24小时不间断运维服务。</div>
-                <div>&nbsp;</div>
-                <div>我们遵循国际通行的4S原则（安全、稳定、快速、服务）竭诚为用户提供7*24小时不间断运维服务。</div>
-                <div>&nbsp;</div>
-            </div>
-        </div>
-    </div>
-</div>
-<a name="nav4" id="nav4"></a>
-<div class="scroll-nav page-cp-box-tit page-hy-tit">
-    <div class="container">
-        <div class="tit wow fadeInUpa">
             <h2>合作伙伴</h2>
         </div>
     </div>
@@ -160,7 +135,7 @@
     </div>
 </div>
 
-<a name="nav5" id="nav5"></a>
+<a name="nav4" id="nav4"></a>
 <div class="scroll-nav page-cp-box-tit page-hy-tit">
     <div class="container">
         <div class="tit wow fadeInUpa">
@@ -187,27 +162,43 @@
     </div>
 </div>
 
-<a name="nav6" id="nav6"></a>
+<a name="nav5" id="nav5"></a>
 <div class="scroll-nav page-cp-box-tit page-hy-tit">
     <div class="container">
         <div class="tit wow fadeInUpa">
-            <h2>公司联系方式</h2>
+            <h2>联系我们</h2>
         </div>
     </div>
 </div>
 
-<div class="page-ab-box4 container_weinfo wow fadeInUpa">
+<div class="page-ab-box5 container_weinfo wow fadeInUpa">
     <div class="row">
-        <div class="col-md-3 col-xs-12">
-            <div class="item item_contact">
-                <span><p>中国区销售联系</p></span>
-                <span><p>电话: 15287792929</p></span>
-                <span><p>邮箱: <a href="mailto:domestic.sales@unisoc.com">domestic.sales@unisoc.com</a></p></span>
+        <div class="col-xs-4">
+            <div class="item">
+                <strong>地址</strong>
+                <p>广东省珠海市横琴新区横琴创意谷20栋C座2楼</p>
+                <strong>电话</strong>
+                <p>0756-8688276</p>
+                <strong>邮箱</strong>
+                <span><p><a href="mailto:postmaster@qinzhi.tech">postmaster@qinzhi.tech</a></p></span>
             </div>
         </div>
-        <div class="col-md-6 col-xs-12">
-            <div style="width:700px;height:400px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+       <!-- <div class="col-xs-4">
+            <div class="item">
+                <strong>电话</strong>
+                <p>0756-8688276</p>
+            </div>
         </div>
+        <div class="col-xs-4">
+            <div class="item">
+                <strong>邮箱</strong>
+                <span><p><a href="mailto:postmaster@qinzhi.tech">postmaster@qinzhi.tech</a></p></span>
+            </div>
+        </div>-->
+        <div class="col-xs-4">
+            <div style="width:650px;height:335px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+        </div>
+
     </div>
     <div class="fashet"></div><!--撑高度  -->
 </div>

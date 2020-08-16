@@ -48,8 +48,13 @@ public class HomeController {
 
     @GetMapping("/news")
     public String news(NewsQuery newsQuery, Model model) {
+        News news = newsService.findLatestNews();
+        if (null != news) {
+            newsQuery.setNewsId(news.getId());
+        }
         PageResultSet<News> pageResultSet = newsService.findByPage(newsQuery);
         pageResultSet.setCurrentPage(newsQuery.getCurrentPage());
+        model.addAttribute("firNews", news);
         model.addAttribute("resultSet", pageResultSet);
         return "home/news";
     }
@@ -76,7 +81,7 @@ public class HomeController {
     @GetMapping("/contactus")
     public String contactUs(CustomQuery cusdomQuery, Model model) {
         model.addAttribute("cusdomQuery", cusdomQuery);
-        return "solution";
+        return "home/solution";
     }
 
     @GetMapping("/platform")

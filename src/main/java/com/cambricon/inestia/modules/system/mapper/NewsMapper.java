@@ -11,4 +11,5 @@ import com.cambricon.inestia.modules.system.po.News;
  **/
 public interface NewsMapper extends MyMapper<News> {
 
+    News selectLatestNews();
 }

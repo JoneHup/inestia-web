@@ -91,10 +91,35 @@
     </div>
 </div>
 
+<div class="scroll-nav page-cp-box-tit page-hy-tit">
+    <div class="container">
+        <div class="tit wow fadeInUpa">
+            <h2>公司新闻</h2>
+        </div>
+    </div>
+</div>
+
 <div class="page-news-box1">
     <div class="container">
+        <th th:if="${firNews} ne null">
+            <div class="page-news-top">
+                <div class="item">
+                    <a th:href="@{/home/news/detail(newsId=${firNews.id})}">
+                        <div class="img">
+                            <img th:if="${not #strings.isEmpty(firNews.img)}" th:src="${firNews.img}" th:alt="${firNews.title}" />
+                            <img th:if="${#strings.isEmpty(firNews.img)}" th:src="@{/static/home/img/news-base.jpg}" th:alt="${firNews.title}" />
+                        </div>
+                        <div class="txt">
+                            <h3>[[${firNews.title}]]</h3>
+                            <span class="time">[[${firNews.modifyTime}]]</span>
+                            <span class="source">来源：[[${firNews.source}]]</span>
+                            <p>[[${firNews.contentExt}]]</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </th>
         <div class="row">
-
             <th th:each="row : ${resultSet.rows}">
                 <div class="col-xs-12 col-sm-4">
                     <div class="item">
@@ -117,105 +142,6 @@
                     </div>
                 </div>
             </th>
-            <!--<div class="col-xs-12 col-sm-4">
-                <div class="item">
-                    <a href="/index.php?m=content&c=index&a=show&catid=127&id=12">
-
-                        <div class="img">
-                            <img th:src="@{/static/home/img/news-1.jpg}" alt=" 第二十一届高交会圆满落幕，寒武纪思元220成为关注热点" />
-                        </div>
-                        <div class="txt">
-                            <div class="date">
-                                <span class="day">20</span>
-                                <span class="year">Nov <br />2019</span>
-                            </div>
-                            <h3>第二十一届高交会圆满落幕，寒武纪思元220成为关注热点
-                            </h3>
-                            <div class="source">来源：寒武纪科技微信公众号</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <div class="item">
-                    <a href="/index.php?m=content&c=index&a=show&catid=127&id=11">
-
-                        <div class="img">
-                            <img th:src="@{/static/home/img/news-1.jpg}" alt=" 寒武纪推出边缘AI芯片「思元220」" />
-                        </div>
-                        <div class="txt">
-                            <div class="date">
-                                <span class="day">20</span>
-                                <span class="year">Nov <br />2019</span>
-                            </div>
-                            <h3>
-                                寒武纪推出边缘AI芯片「思元220」
-                            </h3>
-                            <div class="source">来源：寒武纪科技微信公众号</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <div class="item">
-                    <a href="/index.php?m=content&c=index&a=show&catid=127&id=10">
-                        <div class="img">
-                            <img th:src="@{/static/home/img/news-1.jpg}" alt=" 寒武纪思元220边缘AI芯片将在高交会重磅发布！" />
-                        </div>
-                        <div class="txt">
-                            <div class="date">
-                                <span class="day">20</span>
-                                <span class="year">Nov <br />2019</span>
-                            </div>
-                            <h3>
-                                寒武纪思元220边缘AI芯片将在高交会重磅发布！
-                            </h3>
-                            <div class="source">来源：寒武纪科技微信公众号</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <div class="item">
-                    <a href="/index.php?m=content&c=index&a=show&catid=127&id=9">
-
-                        <div class="img">
-                            <img th:src="@{/static/home/img/news-1.jpg}" alt=" 思元270入选世界互联网领先科技成果，思元220箭在弦上！" />
-                        </div>
-                        <div class="txt">
-                            <div class="date">
-                                <span class="day">19</span>
-                                <span class="year">Nov <br />2019</span>
-                            </div>
-                            <h3>
-                                思元270入选世界互联网领先科技成果，思元220箭在弦上！
-                            </h3>
-                            <div class="source">来源：寒武纪科技微信公众号</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <div class="item">
-                    <a href="/index.php?m=content&c=index&a=show&catid=127&id=8">
-
-                        <div class="img">
-                            <img th:src="@{/static/home/img/news-1.jpg}" alt=" 寒武纪和中国电信签署战略合作协议 共筑5G、AI和边缘计算生态" />
-                        </div>
-                        <div class="txt">
-                            <div class="date">
-                                <span class="day">19</span>
-                                <span class="year">Nov <br />2019</span>
-                            </div>
-                            <h3>
-                                寒武纪和中国电信签署战略合作协议 共筑5G、AI和边缘计算生态
-                            </h3>
-                            <div class="source">来源：寒武纪科技微信公众号</div>
-                        </div>
-                    </a>
-                </div>
-            </div>-->
-
         </div>
 
         <div class="page-news-page">
