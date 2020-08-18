@@ -50,45 +50,45 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/back-1.jpg)'">
+            <div class="swiper-slide" th:onclick="'window.open(\'' + ${#httpServletRequest.getContextPath()} + '/home/platform\',\'_self\')'" th:style="'cursor:pointer;background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/back-1.jpg)'">
                 <div class="container">
                     <div class="item">
-                        <div class="th2" >技术架构</div>
+                        <!--<div class="th2" >技术架构</div>
                         <div class="th1" >核心芯片是通用CPU峰值计算能力低、耗电多</div>
                         <div class="tdes" >
                             <p>核心芯片是智能芯片,峰值计算能力高、耗电少</p>
                         </div>
                         <div class="tbtn" >
-                            <a  th:href="@{/home/product(id=${2})}" class="layui-btn">了解更多</a>
-                        </div>
+                            <a th:href="@{/home/platform}" class="layui-btn">了解更多</a>
+                        </div>-->
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/back-2.jpg)'">
+            <div class="swiper-slide" th:onclick="'window.open(\'' + ${#httpServletRequest.getContextPath()} + '/home/weinfo\',\'_self\')'" th:style="'cursor:pointer;background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/back-2.jpg)'">
                 <div class="container">
                     <div class="item">
-                        <div class="th2" >应用领域</div>
+                        <!--<div class="th2" >应用领域</div>
                         <div class="th1" >主要面向科学计算和工程计算</div>
                         <div class="tdes" >
                             <p>主要面向“智能+”产业应用，并能兼顾科研</p>
                         </div>
                         <div class="tbtn" >
-                            <a  th:href="@{/home/product(id=${3})}" class="layui-btn">了解更多</a>
-                        </div>
+                            <a th:href="@{/home/weinfo}" class="layui-btn">了解更多</a>
+                        </div>-->
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/back-3.jpg)'">
+            <div class="swiper-slide" th:onclick="'window.open(\'' + ${#httpServletRequest.getContextPath()} + '/home/news\',\'_self\')'" th:style="'cursor:pointer;background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/back-3.jpg)'">
                 <div class="container">
                     <div class="item">
-                        <div class="th2" >赋能产业</div>
+                        <!--<div class="th2" >赋能产业</div>
                         <div class="th1" >面向国家重大战略需求，不直接带动产业</div>
                         <div class="tdes" >
                             <p>可直接赋能智慧城市、智能制造、智能医疗、智能教育等</p>
                         </div>
                         <div class="tbtn" >
-                            <a  th:href="@{/home/product(id=${4})}" class="layui-btn">了解更多</a>
-                        </div>
+                            <a th:href="@{/home/news(currentPage=${1},offset=${0},limit=${6},order=${'desc'})}" class="layui-btn">了解更多</a>
+                        </div>-->
                     </div>
                 </div>
             </div>
@@ -241,5 +241,14 @@
 <script th:src="@{/static/home/js/wow.js}"></script>
 <script th:src="@{/static/home/js/jquery-ui.min.js}"></script>
 <script th:src="@{/static/home/js/page.js}"></script>
+<script>
+    /*$(function () {
+        alert(111)
+        $("#page1").click(function () {
+
+            window.open('<%=request.getContextPath()%>' + '/home/platform','_self');
+        });
+    });*/
+</script>
 </body>
 </html>

@@ -14,6 +14,8 @@ public class ProductQuery {
 
     private String productName;
 
+    private String nav;
+
     public Long getId() {
         return id;
     }
@@ -36,5 +38,13 @@ public class ProductQuery {
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public String getNav() {
+        return nav;
+    }
+
+    public void setNav(String nav) {
+        this.nav = nav;
     }
 }

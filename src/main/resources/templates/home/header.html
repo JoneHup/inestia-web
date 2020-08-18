@@ -29,13 +29,13 @@
                                 <a href="javaScript:;">人工智能超算产品</a>
                                 <ul>
                                     <li>
-                                        <a th:href="@{/home/product(id=${11})}">推理计算型</a>
+                                        <a th:href="@{/home/product(id=${11},nav=${'nav1'},productName=${'type'})}">推理计算型</a>
                                     </li>
                                     <li>
-                                        <a th:href="@{/home/product(id=${12})}">训练计算型</a>
+                                        <a th:href="@{/home/product(id=${12},nav=${'nav2'},productName=${'type'})}">训练计算型</a>
                                     </li>
                                     <li>
-                                        <a th:href="@{/home/product(id=${13})}">CPU通用计算型</a>
+                                        <a th:href="@{/home/product(id=${13},nav=${'nav3'},productName=${'type'})}">CPU通用计算型</a>
                                     </li>
                                 </ul>
                             </li>
@@ -129,7 +129,7 @@
                                 <a th:href="@{/home/weinfo(nav=${'nav2'})}">公司愿景</a>
                             </li>
                             <li>
-                                <a th:href="@{/home/weinfo(nav=${'nav3'})}">合作企业</a>
+                                <a th:href="@{/home/weinfo(nav=${'nav3'})}">合作伙伴</a>
                             </li>
                             <li>
                                 <a th:href="@{/home/weinfo(nav=${'nav4'})}">招聘事宜</a>

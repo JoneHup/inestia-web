@@ -595,6 +595,8 @@ layui.use(["form", "util", "element"], function() {
         $("html , body").animate({
           scrollTop: roll
         });
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
         return false;
       });
     });

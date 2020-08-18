@@ -94,6 +94,7 @@ public class HomeController {
     public String product(ProductQuery productQuery, Model model) {
         Product product = productService.findById(productQuery);
         model.addAttribute("product", product);
+        model.addAttribute("productQuery", productQuery);
         if (! StringUtils.isEmpty(productQuery.getProductName())) {
             return "home/product_".concat(productQuery.getProductName());
         }
