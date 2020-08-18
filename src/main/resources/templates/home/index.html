@@ -39,17 +39,6 @@
 <div class="index-banner">
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/background-1.jpg)'">
-
-                <div class="container">
-                    <div class="item banner1">
-                        <div class="th1 " >让机器更好地理解和服务人类</div>
-                        <div class="tbtn" >
-                            <a  th:href="@{/home/product(id=${1})}" class="layui-btn">了解更多</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="swiper-slide" th:onclick="'window.open(\'' + ${#httpServletRequest.getContextPath()} + '/home/platform\',\'_self\')'" th:style="'cursor:pointer;background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/back-1.jpg)'">
                 <div class="container">
                     <div class="item">
@@ -61,6 +50,21 @@
                         <div class="tbtn" >
                             <a th:href="@{/home/platform}" class="layui-btn">了解更多</a>
                         </div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/background-5.jpg)'">
+                <div class="container">
+                    <div class="item">
+                        <div class="th2" >造价成本</div>
+                        <div class="th1" >造价昂贵、运营成本高E级计算尚未实现商用
+                        </div>
+                        <div class="tdes" >
+                            <p>造价成本及运营成本较低,已实现E级智能计算</p>
+                        </div>
+                        <div class="tbtn" >
+                            <a  th:href="@{/home/product(id=${5})}" class="layui-btn">了解更多</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -78,6 +82,16 @@
                     </div>
                 </div>
             </div>
+            <div class="swiper-slide" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/background-1.jpg)'">
+                <div class="container">
+                    <div class="item banner1">
+                        <div class="th1 " >让机器更好地理解和服务人类</div>
+                        <div class="tbtn" >
+                            <a  th:href="@{/home/product(id=${1})}" class="layui-btn">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="swiper-slide" th:onclick="'window.open(\'' + ${#httpServletRequest.getContextPath()} + '/home/news\',\'_self\')'" th:style="'cursor:pointer;background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/back-3.jpg)'">
                 <div class="container">
                     <div class="item">
@@ -92,23 +106,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="swiper-slide" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/background-5.jpg)'">
-                <div class="container">
-                    <div class="item">
-                        <div class="th2" >造价成本</div>
-                        <div class="th1" >造价昂贵、运营成本高E级计算尚未实现商用
-                        </div>
-                        <div class="tdes" >
-                            <p>造价成本及运营成本较低,已实现E级智能计算</p>
-                        </div>
-                        <div class="tbtn" >
-                            <a  th:href="@{/home/product(id=${5})}" class="layui-btn">了解更多</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
     <div class="swiper-pagination"></div>
