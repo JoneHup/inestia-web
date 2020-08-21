@@ -58,10 +58,14 @@
         </div>
         <div class="page-nav-right">
             <div class="page-nav-right-md" id="page-nav-md-a">
-                <a href="javaScript:;nav1" class="active">概述</a>
-                <a href="javaScript:;nav2" >核心优势</a>
-                <a href="javaScript:;nav3" >应用领域</a>
-                <a href="javaScript:;nav4" >产品规格</a>
+                <a th:if="${productQuery.nav} eq 'nav1'" href="#nav1" class="active">概述</a>
+                <a th:if="${productQuery.nav} ne 'nav1'" href="#nav1">概述</a>
+                <a th:if="${productQuery.nav} eq 'nav2'" href="#nav2" class="active">核心优势</a>
+                <a th:if="${productQuery.nav} ne 'nav2'" href="#nav2">核心优势</a>
+                <a th:if="${productQuery.nav} eq 'nav3'" href="#nav3" class="active">应用领域</a>
+                <a th:if="${productQuery.nav} ne 'nav3'" href="#nav3">应用领域</a>
+                <a th:if="${productQuery.nav} eq 'nav4'" href="#nav4" class="active">产品规格</a>
+                <a th:if="${productQuery.nav} ne 'nav4'" href="#nav4">产品规格</a>
             </div>
         </div>
     </div>
@@ -252,7 +256,7 @@
 
 
 <div class="page-cp-box-ad page-cp-box-ad-lx wow fadeInUpa">
-    <a th:href="@{/home/contactus}">联系我们</a>
+    <a th:href="@{/home/weinfo(nav=${'nav5'})}">联系我们</a>
 </div>
 <div class="fashet"></div><!--撑高度  -->
 <!--产品系列介绍******************************************************结束-->

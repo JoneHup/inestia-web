@@ -1,0 +1,191 @@
+<!--<!DOCTYPE html>-->
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <title>琴智科技</title>
+    <meta name="keywords" content="琴智科技；疫情防控；智慧城市；智慧产业；" />
+    <meta name="description" content="" />
+    <meta name="robots" content="All" />
+    <link rel="shortcut icon" th:href="@{/static/home/img/title.ico}"/>
+    <link th:href="@{/static/home/js/bootstrap/css/less/bootstrap.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/css/font-awesome.min.css}" rel="stylesheet">
+    <link th:href="@{/static/home/css/swiper.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/js/layui/css/layui.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/animation.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/iconfont.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/video-js.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/jquery.fancybox.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/style.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/cp-p3.css}" rel="stylesheet" type="text/css" />
+    <script th:src="@{/static/home/js/jquery-1.12.4.min.js}"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?08bf0a6e04a9cb9128b9e26f3355b392";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+
+
+        })();
+    </script>
+
+</head>
+<body>
+
+<header th:include="home/header :: header"></header>
+
+<div class="page-banner" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/contactus_0.jpg)'">
+    <div class="txt wow fadeInUpa">
+        <h2>解决方案</h2>
+<!--        <p>产品技术介绍</p>-->
+    </div>
+</div>
+
+<div class="page-nav ">
+    <div class="container conth">
+        <div class="page-nav-left">
+            <ul id="page-nav">
+                <li class="active">产品技术</li>
+                <li th:if="${not #strings.isEmpty(product.rootName)}">[[${product.rootName}]]</li>
+                <!--<li th:if="${not #strings.isEmpty(product.parentName)}" class="last">[[${product.parentName}]]</li>-->
+            </ul>
+        </div>
+
+        <div class="page-nav-right">
+            <div class="page-nav-right-md" id="page-nav-md-a">
+                <a th:if="${productQuery.nav} eq 'nav1'" href="#nav1" class="active">智能港航</a>
+                <a th:if="${productQuery.nav} ne 'nav1'" href="#nav1">智能港航</a>
+                <a th:if="${productQuery.nav} eq 'nav2'" href="#nav2" class="active">智能物流</a>
+                <a th:if="${productQuery.nav} ne 'nav2'" href="#nav2">智能物流</a>
+                <a th:if="${productQuery.nav} eq 'nav3'" href="#nav3" class="active">智能消费</a>
+                <a th:if="${productQuery.nav} ne 'nav3'" href="#nav3">智能消费</a>
+                <a th:if="${productQuery.nav} eq 'nav4'" href="#nav4" class="active">智能生活娱乐</a>
+                <a th:if="${productQuery.nav} ne 'nav4'" href="#nav4">智能生活娱乐</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--产品系列介绍******************************************************开始-->
+<a name="nav1" id="nav1"></a>
+<div class="scroll-nav page-cp-p2-box1" style="height: 250px;">
+    <div class="container">
+        <div class="item" style="border: none">
+            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_11.jpg}" alt="智能海航" style="
+                width: 55px;
+                height: 50px;
+                top: 24px;
+                right: 875px;
+                position: absolute;"/>
+            </div>
+            <div class="txt" style="width: 60%;top: 25%;right: 200px;">
+                <div class="tit wow fadeInUpa">
+                    <h2>智能海航</h2>
+                </div>
+                <div class="body wow fadeInUpa">
+                    <p>利用AI技术全面收集城市运行各状态的海量数据信息，搭建智慧城市平台，实现城市全局资源配置的最优化及高效利用，保障城市安全、高效、健康运行。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a name="nav2" id="nav2"></a>
+<div class="scroll-nav page-cp-p2-box1" style="height: 250px;">
+    <div class="container">
+        <div class="item" style="border: none">
+            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_12.jpg}" alt="智能物流" style="
+                width: 55px;
+                height: 50px;
+                top: 24px;
+                right: 875px;
+                position: absolute;"/>
+            </div>
+            <div class="txt" style="width: 60%;top: 25%;right: 200px;">
+                <div class="tit wow fadeInUpa">
+                    <h2>智能物流</h2>
+                </div>
+                <div class="body wow fadeInUpa">
+                    <p>发挥横琴人工智能超算中心自身技术优势，实现智能城市交通疏导、智能出行安全防控，大幅提升路网承载能力，高效实现城市全局资源配置，整体提升城市的智慧化水平。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a name="nav3" id="nav3"></a>
+<div class="scroll-nav page-cp-p2-box1" style="height: 250px;">
+    <div class="container">
+        <div class="item" style="border: none">
+            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_13.jpg}" alt="智能消费" style="
+                width: 55px;
+                height: 50px;
+                top: 24px;
+                right: 875px;
+                position: absolute;"/>
+            </div>
+            <div class="txt" style="width: 60%;top: 25%;right: 200px;">
+                <div class="tit wow fadeInUpa">
+                    <h2>智能消费</h2>
+                </div>
+                <div class="body wow fadeInUpa">
+                    <p>利用AI技术全面收集城市运行各状态的海量数据信息，搭建智慧城市平台，实现城市全局资源配置的最优化及高效利用，保障城市安全、高效、健康运行。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a name="nav4" id="nav4"></a>
+<div class="scroll-nav page-cp-p2-box1" style="height: 250px;">
+    <div class="container">
+        <div class="item" style="border: none">
+            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_14.jpg}" alt="智能生活娱乐" style="
+                width: 55px;
+                height: 50px;
+                top: 24px;
+                right: 875px;
+                position: absolute;"/>
+            </div>
+            <div class="txt" style="width: 60%;top: 25%;right: 200px;">
+                <div class="tit wow fadeInUpa">
+                    <h2>智能生活娱乐</h2>
+                </div>
+                <div class="body wow fadeInUpa">
+                    <p>发挥横琴人工智能超算中心自身技术优势，实现智能城市交通疏导、智能出行安全防控，大幅提升路网承载能力，高效实现城市全局资源配置，整体提升城市的智慧化水平。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-cp-box-ad page-cp-box-ad-lx wow fadeInUpa">
+    <a th:href="@{/home/weinfo(nav=${'nav5'})}">联系我们</a>
+</div>
+<div class="fashet"></div><!--撑高度  -->
+<!--产品系列介绍******************************************************结束-->
+<footer th:include="home/footer :: footer"></footer>
+<script type="text/javascript">
+    $('#navli a').each(function(){
+        if ($(this).attr("href")=='javaScript:;') {
+            $(this).addClass("no_pointer");
+        }
+
+    });
+</script>
+
+<script th:src="@{/static/home/js/layui/layui.js}"></script>
+<script th:src="@{/static/home/js/layui/config.js}"></script>
+<script th:src="@{/static/home/js/swiper.js}"></script>
+<script th:src="@{/static/home/js/video.js/video.js}"></script>
+<script th:src="@{/static/home/js/jquery.appear.js}"></script>
+<script th:src="@{/static/home/js/jquery.countTo.js}"></script>
+<script th:src="@{/static/home/js/jquery.tap.js}"></script>
+<script th:src="@{/static/home/js/bootstrap/js/bootstrap.js}"></script>
+<script th:src="@{/static/home/js/gd.js}"></script>
+<script th:src="@{/static/home/js/jquery.fancybox.js}"></script>
+<script th:src="@{/static/home/js/wow.js}"></script>
+<script th:src="@{/static/home/js/jquery-ui.min.js}"></script>
+<script th:src="@{/static/home/js/page.js}"></script>
+</body>
+</html>

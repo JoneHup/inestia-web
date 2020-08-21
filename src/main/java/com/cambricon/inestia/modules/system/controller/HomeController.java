@@ -78,8 +78,8 @@ public class HomeController {
         return "home/weinfo";
     }
 
-    @GetMapping("/contactus")
-    public String contactUs(CustomQuery cusdomQuery, Model model) {
+    @GetMapping("/solution")
+    public String solution(CustomQuery cusdomQuery, Model model) {
         model.addAttribute("cusdomQuery", cusdomQuery);
         return "home/solution";
     }

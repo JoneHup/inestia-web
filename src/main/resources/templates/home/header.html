@@ -56,42 +56,74 @@
                     </div>
                 </li>
                 <li class="">
-                    <a th:href="@{/home/contactus}">解决方案</a>
+                    <a th:href="@{/home/product(id=${31},productName=${'solution1'})}">解决方案</a>
                     <div class="navli-nav cp">
                         <p class="fanhui">
                             <span class="layui-icon layui-icon-left"></span>返回
                         </p>
                         <ul>
                             <li>
-                                <a href="javaScript:;" >产品的各项实际应用</a>
+                                <a th:href="@{/home/product(id=${31},productName=${'solution1'})}" >智慧城市</a>
                                 <ul>
                                     <li>
-                                        <a href="javaScript:;" >智慧城市</a>
-                                        <ul>
-                                            <li>
-                                                <a th:href="@{/home/product(id=${31},productName=${'solution'},nav=${'nav1'})}">城市实时仿真</a>
-                                            </li>
-                                            <li>
-                                                <a th:href="@{/home/product(id=${32},productName=${'solution'},nav=${'nav2'})}">智能交通系统</a>
-                                            </li>
-                                        </ul>
+                                        <a th:href="@{/home/product(id=${31},productName=${'solution1'},nav=${'nav1'})}">城市实时仿真</a>
                                     </li>
                                     <li>
-                                        <a href="javaScript:;" >智慧产业</a>
-                                        <ul>
-                                            <li>
-                                                <a th:href="@{/home/product(id=${33})}">智能教育</a>
-                                            </li>
-                                            <li>
-                                                <a th:href="@{/home/product(id=${34})}">智能物流</a>
-                                            </li>
-                                            <li>
-                                                <a th:href="@{/home/product(id=${35})}">智能医疗</a>
-                                            </li>
-                                            <li>
-                                                <a th:href="@{/home/product(id=${36})}">智能金融</a>
-                                            </li>
-                                        </ul>
+                                        <a th:href="@{/home/product(id=${32},productName=${'solution1'},nav=${'nav2'})}">智能交通系统</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${33},productName=${'solution1'},nav=${'nav3'})}">智能安防</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a th:href="@{/home/product(id=${34},productName=${'solution2a'})}" >智慧产业</a>
+                                <ul>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${34},productName=${'solution2a'},nav=${'nav1'})}">智能教育</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${35},productName=${'solution2a'},nav=${'nav2'})}">智能医疗</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${36},productName=${'solution2a'},nav=${'nav3'})}">智能制造</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${37},productName=${'solution2a'},nav=${'nav4'})}">智能金融</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${38},productName=${'solution2b'},nav=${'nav5'})}">智能港航</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${39},productName=${'solution2b'},nav=${'nav6'})}">智能物流</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${40},productName=${'solution2b'},nav=${'nav7'})}">智能消费</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${41},productName=${'solution2b'},nav=${'nav8'})}">智能生活娱乐</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a th:href="@{/home/product(id=${50},productName=${'solution3'})}" >疫情防控</a>
+                                <ul>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${50},productName=${'solution3'},nav=${'nav1'})}">疫情防控</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a th:href="@{/home/product(id=${51},productName=${'solution4'})}" >创新创业</a>
+                                <ul>
+                                    <li>
+                                        <a th:href="@{/home/product(id=${51},productName=${'solution4'},nav=${'nav1'})}">创新创业</a>
                                     </li>
                                 </ul>
                             </li>

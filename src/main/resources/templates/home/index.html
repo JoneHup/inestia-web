@@ -56,29 +56,28 @@
             <div class="swiper-slide" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/background-5.jpg)'">
                 <div class="container">
                     <div class="item">
-                        <div class="th2" >造价成本</div>
-                        <div class="th1" >造价昂贵、运营成本高E级计算尚未实现商用
-                        </div>
-                        <div class="tdes" >
-                            <p>造价成本及运营成本较低,已实现E级智能计算</p>
-                        </div>
+<!--                        <div class="th2" >造价成本</div>-->
+                        <div class="th1" >直接赋能智慧城市、智能制造、智能医疗等</div>
+<!--                        <div class="tdes" >-->
+<!--                            <p>造价成本及运营成本较低,已实现E级智能计算</p>-->
+<!--                        </div>-->
                         <div class="tbtn" >
-                            <a  th:href="@{/home/product(id=${5})}" class="layui-btn">了解更多</a>
+                            <a  th:href="@{/home/product(id=${34},productName=${'solution2a'})}" class="layui-btn">了解更多</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide" th:onclick="'window.open(\'' + ${#httpServletRequest.getContextPath()} + '/home/weinfo\',\'_self\')'" th:style="'cursor:pointer;background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/back-2.jpg)'">
+            <div class="swiper-slide" th:style="'cursor:pointer;background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/back-2.jpg)'">
                 <div class="container">
                     <div class="item">
-                        <!--<div class="th2" >应用领域</div>
-                        <div class="th1" >主要面向科学计算和工程计算</div>
-                        <div class="tdes" >
+<!--                        <div class="th2" >应用领域</div>-->
+                        <div class="th1" >核心平台+数据运营+生态合作</div>
+                       <!-- <div class="tdes" >
                             <p>主要面向“智能+”产业应用，并能兼顾科研</p>
-                        </div>
+                        </div>-->
                         <div class="tbtn" >
                             <a th:href="@{/home/weinfo}" class="layui-btn">了解更多</a>
-                        </div>-->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,7 +86,7 @@
                     <div class="item banner1">
                         <div class="th1 " >让机器更好地理解和服务人类</div>
                         <div class="tbtn" >
-                            <a  th:href="@{/home/product(id=${1})}" class="layui-btn">了解更多</a>
+                            <a  th:href="@{/home/product(id=${11},nav=${'nav1'},productName=${'type'})}" class="layui-btn">了解更多</a>
                         </div>
                     </div>
                 </div>
@@ -124,28 +123,28 @@
                             <h2>技术架构</h2>
                             <p>核心芯片是智能芯片,峰值计算能力高、耗电少</p>
                             <div class="btns">
-                                <a  th:href="@{/home/product(id=${7})}" class="layui-btn">了解更多</a>
+                                <a  th:href="@{/home/product(id=${22},productName=${'siyuan270'})}" class="layui-btn">了解更多</a>
                             </div>
                         </div>
 
                     </div>
                     <div class="item wow fadeInUpa">
-                        <div class="img"><img th:src="@{/static/home/img/mid-2.jpg}" alt="终端智能处理器IP" /></div>
+                        <div class="img"><img th:src="@{/static/home/img/mid-4.jpg}" alt="终端智能处理器IP" /></div>
                         <div class="txt">
                             <h2>应用领域</h2>
                             <p>主要面向“智能+”产业应用，并能兼顾科研</p> <div class="btns">
-                            <a  th:href="@{/home/product(id=${8})}" class="layui-btn">了解更多</a>
+                            <a  th:href="@{/home/product(id=${31},productName=${'solution1'})}" class="layui-btn">了解更多</a>
                         </div>
                         </div>
 
                     </div>
                     <div class="item wow fadeInUpa">
-                        <div class="img"><img th:src="@{/static/home/img/mid-3.jpg}" alt="边缘AI加速卡" /></div>
+                        <div class="img"><img th:src="@{/static/home/img/mid-5.jpg}" alt="边缘AI加速卡" /></div>
                         <div class="txt">
-                            <h2>赋能产业</h2>
-                            <p>可直接赋能智慧城市、智能制造、智能医疗、智能教育等</p>
+                            <h2>智能超算</h2>
+                            <p>提供智能计算软硬件服务、资源共享及调度、交叉研究支撑、数据集中存储及备份、产业创新等五大功能性服务</p>
                             <div class="btns">
-                                <a  th:href="@{/home/product(id=${9})}" class="layui-btn">了解更多</a>
+                                <a  th:href="@{/home/platform}" class="layui-btn">了解更多</a>
                             </div>
                         </div>
 

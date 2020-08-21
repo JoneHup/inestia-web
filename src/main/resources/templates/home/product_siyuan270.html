@@ -58,11 +58,16 @@
         </div>
         <div class="page-nav-right">
             <div class="page-nav-right-md" id="page-nav-md-a">
-                <a href="javaScript:;nav1" class="active">概述</a>
-                <a href="javaScript:;nav2" >核心优势</a>
-                <a href="javaScript:;nav3" >应用领域</a>
-                <a href="javaScript:;nav4" >产品对比</a>
-                <a href="javaScript:;nav5" >更多产品</a>
+                <a th:if="${productQuery.nav} eq 'nav1'" href="#nav1" class="active">概述</a>
+                <a th:if="${productQuery.nav} ne 'nav1'" href="#nav1">概述</a>
+                <a th:if="${productQuery.nav} eq 'nav2'" href="#nav2" class="active">核心优势</a>
+                <a th:if="${productQuery.nav} ne 'nav2'" href="#nav2">核心优势</a>
+                <a th:if="${productQuery.nav} eq 'nav3'" href="#nav3" class="active">应用领域</a>
+                <a th:if="${productQuery.nav} ne 'nav3'" href="#nav3">应用领域</a>
+                <a th:if="${productQuery.nav} eq 'nav4'" href="#nav4" class="active">产品规格</a>
+                <a th:if="${productQuery.nav} ne 'nav4'" href="#nav4">产品规格</a>
+                <a th:if="${productQuery.nav} eq 'nav5'" href="#nav5" class="active">更多产品</a>
+                <a th:if="${productQuery.nav} ne 'nav5'" href="#nav5">更多产品</a>
             </div>
         </div>
     </div>
@@ -186,48 +191,6 @@
         </div>
     </div>
 </div>
-<!--<div class="scroll-nav page-cp-box-tit page-cp-p7-box1">
-    <div class="container">
-        <div class="tit wow fadeInUpa">
-            <h2>了解更多寒武纪智能加速卡270系列产品</h2>
-        </div>
-        <div class="page-sp-p7-box1-swiper swiper-box7 wow fadeInUpa">
-            <div class="swiper-container">
-                <div class="swiper-wrapper" style="height: auto">
-                    <div class="swiper-slide">
-                        <div class="item">
-                            <a href="javascript:void(0)">
-                                <div class="img">
-                                    <img th:src="@{/static/home/img/product_4.jpg}" alt="思元270-S4">
-                                </div>
-                                <div class="txt">
-                                    <h3>思元270-S4</h3>
-                                    <p>为高性能比AI推理设计的数据中心级加速卡</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="item">
-                            <a href="javascript:void(0)">
-                                <div class="img">
-                                    <img th:src="@{/static/home/img/siyuan270_4.png}" alt="思元270-F4">
-                                </div>
-                                <div class="txt">
-                                    <h3>思元270-F4</h3>
-                                    <p>面向非数据中心AI推理</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-    </div>
-</div>-->
 
 <div class="scroll-nav page-cp-p2-box1">
     <div class="container">
@@ -321,7 +284,7 @@
 </div>
 
 <div class="page-cp-box-ad page-cp-box-ad-lx wow fadeInUpa">
-    <a th:href="@{/home/contactus}">联系我们</a>
+    <a th:href="@{/home/weinfo(nav=${'nav5'})}">联系我们</a>
 </div>
 <div class="fashet"></div><!--撑高度  -->
 <!--产品系列介绍******************************************************结束-->

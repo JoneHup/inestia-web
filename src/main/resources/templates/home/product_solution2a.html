@@ -38,10 +38,10 @@
 
 <header th:include="home/header :: header"></header>
 
-<div class="page-banner" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/product_head.jpg)'">
+<div class="page-banner" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/contactus_0.jpg)'">
     <div class="txt wow fadeInUpa">
-        <h2>产品及技术</h2>
-        <p>产品技术介绍</p>
+        <h2>解决方案</h2>
+<!--        <p>产品技术介绍</p>-->
     </div>
 </div>
 
@@ -51,23 +51,30 @@
             <ul id="page-nav">
                 <li class="active">产品技术</li>
                 <li th:if="${not #strings.isEmpty(product.rootName)}">[[${product.rootName}]]</li>
-                <li th:if="${not #strings.isEmpty(product.parentName)}" class="last">[[${product.parentName}]]</li>
+                <!--<li th:if="${not #strings.isEmpty(product.parentName)}" class="last">[[${product.parentName}]]</li>-->
             </ul>
         </div>
 
         <div class="page-nav-right">
             <div class="page-nav-right-md" id="page-nav-md-a">
-                <a href="javaScript:;nav1" class="active">城市实时仿真</a>
-                <a href="javaScript:;nav2" >智能交通系统</a>
+                <a th:if="${productQuery.nav} eq 'nav1'" href="#nav1" class="active">智能教育</a>
+                <a th:if="${productQuery.nav} ne 'nav1'" href="#nav1">智能教育</a>
+                <a th:if="${productQuery.nav} eq 'nav2'" href="#nav2" class="active">智能医疗</a>
+                <a th:if="${productQuery.nav} ne 'nav2'" href="#nav2">智能医疗</a>
+                <a th:if="${productQuery.nav} eq 'nav3'" href="#nav3" class="active">智能制造</a>
+                <a th:if="${productQuery.nav} ne 'nav3'" href="#nav3">智能制造</a>
+                <a th:if="${productQuery.nav} eq 'nav4'" href="#nav4" class="active">智能金融</a>
+                <a th:if="${productQuery.nav} ne 'nav4'" href="#nav4">智能金融</a>
             </div>
         </div>
     </div>
 </div>
 <!--产品系列介绍******************************************************开始-->
+<a name="nav1" id="nav1"></a>
 <div class="scroll-nav page-cp-p2-box1" style="height: 250px;">
     <div class="container">
         <div class="item" style="border: none">
-            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_1.jpg}" alt="城市实时仿真" style="
+            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_7.jpg}" alt="智能教育" style="
                 width: 55px;
                 height: 50px;
                 top: 24px;
@@ -76,7 +83,51 @@
             </div>
             <div class="txt" style="width: 60%;top: 25%;right: 200px;">
                 <div class="tit wow fadeInUpa">
-                    <h2>城市实时仿真</h2>
+                    <h2>智能教育</h2>
+                </div>
+                <div class="body wow fadeInUpa">
+                    <p>全国赋能教育领域，引入与实际教育场景深度融合的人工智能解决方案，实现远程教育中师生间的线上交互，解决教育资源不平衡的市场痛点。教学过程数据化，推动个性化教学方法，有效提升教学质量。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a name="nav2" id="nav2"></a>
+<div class="scroll-nav page-cp-p2-box1" style="height: 250px;">
+    <div class="container">
+        <div class="item" style="border: none">
+            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_8.jpg}" alt="智能医疗" style="
+                width: 55px;
+                height: 50px;
+                top: 24px;
+                right: 875px;
+                position: absolute;"/>
+            </div>
+            <div class="txt" style="width: 60%;top: 25%;right: 200px;">
+                <div class="tit wow fadeInUpa">
+                    <h2>智能医疗</h2>
+                </div>
+                <div class="body wow fadeInUpa">
+                    <p>发挥横琴人工智能超算中心自身技术优势，实现智能城市交通疏导、智能出行安全防控，大幅提升路网承载能力，高效实现城市全局资源配置，整体提升城市的智慧化水平。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a name="nav3" id="nav3"></a>f
+<div class="scroll-nav page-cp-p2-box1" style="height: 250px;">
+    <div class="container">
+        <div class="item" style="border: none">
+            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_9.jpg}" alt="智能制造" style="
+                width: 55px;
+                height: 50px;
+                top: 24px;
+                right: 875px;
+                position: absolute;"/>
+            </div>
+            <div class="txt" style="width: 60%;top: 25%;right: 200px;">
+                <div class="tit wow fadeInUpa">
+                    <h2>智能制造</h2>
                 </div>
                 <div class="body wow fadeInUpa">
                     <p>利用AI技术全面收集城市运行各状态的海量数据信息，搭建智慧城市平台，实现城市全局资源配置的最优化及高效利用，保障城市安全、高效、健康运行。</p>
@@ -85,10 +136,11 @@
         </div>
     </div>
 </div>
+<a name="nav4" id="nav4"></a>
 <div class="scroll-nav page-cp-p2-box1" style="height: 250px;">
     <div class="container">
         <div class="item" style="border: none">
-            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_2.jpg}" alt="城市实时仿真" style="
+            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_10.jpg}" alt="智能金融" style="
                 width: 55px;
                 height: 50px;
                 top: 24px;
@@ -97,7 +149,7 @@
             </div>
             <div class="txt" style="width: 60%;top: 25%;right: 200px;">
                 <div class="tit wow fadeInUpa">
-                    <h2>智能交通系统</h2>
+                    <h2>智能金融</h2>
                 </div>
                 <div class="body wow fadeInUpa">
                     <p>发挥横琴人工智能超算中心自身技术优势，实现智能城市交通疏导、智能出行安全防控，大幅提升路网承载能力，高效实现城市全局资源配置，整体提升城市的智慧化水平。</p>
@@ -107,81 +159,8 @@
     </div>
 </div>
 
-<!--<div class="scroll-nav page-cp-p3-box2 no-padding-top">
-    <div class="container">
-        <div class="tit wow fadeInUpa">
-            <h2>产品规格</h2>
-            <p>国产安全可控先进计算机系统</p>
-        </div>
-        <div class="body wow fadeInUpa">
-            <table class="no-first">
-                <thead>
-                <tr><th colspan="3"><span>AI加速卡产品规格</span></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th>产品性能</th>
-                    <td>
-                        <p>芯片型号</p>
-                        <p>INT8理论峰值/TOPS</p>
-                        <p>INT4理论峰值/TOPS</p>
-                        <p>INT16理论峰值/TOPS</p>
-                    </td>
-                    <td>
-                        <p>AI中台系统</p>
-                        <p>128</p>
-                        <p>256</p>
-                        <p>64</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>计算精度支持</th>
-                    <td>低精度、混合精度</td>
-                    <td>INT16，INT8，INT4，FP32，FP16</td>
-                </tr>
-                <tr>
-                    <th>内存规格</th>
-                    <td>内存容量<br />
-                        内存位宽<br />
-                        内存带宽</td>
-                    <td>16GB DDR4，ECC<br />
-                        256-bit<br />
-                        102 GB/s</td>
-                </tr>
-                <tr>
-                    <th>接口</th>
-                    <td>PCIe接口</td>
-                    <td>x16 PCIe Gen.3</td>
-                </tr>
-                <tr>
-                    <th>功耗</th>
-                    <td>最大热设计功耗<br />
-                        散热设计</td>
-                    <td>70w<br />
-                        被动散热</td>
-                </tr>
-                <tr>
-                    <th>形态</th>
-                    <td colspan="2" style="text-align:center">半高半长，单槽位</td>
-                </tr>
-                <tr>
-                    <th>尺寸</th>
-                    <td colspan="2" style="text-align:center">167.5mm x 68.9mm</td>
-                </tr>
-                <tr>
-                    <th>重量</th>
-                    <td colspan="2" style="text-align:center">310g</td>
-                </tr>
-                </tbody>
-            </table>
-            <p>&nbsp;</p>
-        </div>
-    </div>
-</div>-->
-
 <div class="page-cp-box-ad page-cp-box-ad-lx wow fadeInUpa">
-    <a th:href="@{/home/contactus}">联系我们</a>
+    <a th:href="@{/home/weinfo(nav=${'nav5'})}">联系我们</a>
 </div>
 <div class="fashet"></div><!--撑高度  -->
 <!--产品系列介绍******************************************************结束-->
