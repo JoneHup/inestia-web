@@ -43,9 +43,10 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public PageResultSet<News> findByPage(NewsQuery newsQuery) {
-        if (!StringUtils.isEmpty(newsQuery.getOrderBy())) {
+        /*if (!StringUtils.isEmpty(newsQuery.getOrderBy())) {
             PageHelper.orderBy(newsQuery.getOrderBy());
-        }
+        }*/
+        PageHelper.orderBy("modify_date desc");
 
         Weekend example = Weekend.of(News.class);
         WeekendCriteria<News, Object> criteria = example.weekendCriteria();

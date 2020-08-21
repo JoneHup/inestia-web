@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true" debug="false">
+    <contextName>logback</contextName>
+
+    <!-- dev日志路径 -->
+    <property name="DEV_FILE_PATH" value="D:/DC/do/logs/qinzhi" />
+    <!-- pro日志路径 -->
+    <property name="PRO_FILE_PATH" value="/home/run/logs" />
+    <!-- 系统名称 -->
+    <property name="SYSTEM_NAME" value="inestia" />
+    <!-- 日志文件 -->
+    <property name="DEV_FILE" value="${DEV_FILE_PATH}/${SYSTEM_NAME}.log" />
+    <property name="DEV_SQL_FILE" value="${DEV_FILE_PATH}/${SYSTEM_NAME}_sql.log" />
+
+    <property name="PRO_FILE" value="${PRO_FILE_PATH}/${SYSTEM_NAME}.log" />
+    <property name="PRO_SQL_FILE" value="${PRO_FILE_PATH}/${SYSTEM_NAME}_sql.log" />
+
+    <!-- 文件输出格式 -->
+    <property name="PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} |-%-5level [%thread] %c [%L] -| %msg%n" />
+    <property name="SQL_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} |-%-5level [%thread] %c -| %msg%n"/>
+
+    <!-- 开发环境 -->
+    <springProfile name="dev">
+
+        <!-- 日志输出到控制台 -->
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder> <!-- 格式化 -->
+                <pattern>${PATTERN}</pattern>
+            </encoder>
+        </appender>
+
+        <!-- 按天生成日志文件 -->
+        <appender name="DEV_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${DEV_FILE}</file> <!-- 文件路径 -->
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> <!-- 滚动策略类 -->
+                <fileNamePattern>${DEV_FILE}.%d{YYYY-MM-dd}.log</fileNamePattern> <!-- 文件名称格式 -->
+                <MaxHistory>30</MaxHistory> <!-- 保存最近30天日志 -->
+            </rollingPolicy>
+
+            <encoder> <!-- 格式化 -->
+                <pattern>${PATTERN}</pattern>
+            </encoder>
+        </appender>
+
+        <!-- 按天生成SQL日志文件 -->
+        <appender name="SQL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${DEV_SQL_FILE}</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${DEV_SQL_FILE}.%d{YYYY-MM-dd}.log </fileNamePattern>
+                <MaxHistory>30</MaxHistory>
+            </rollingPolicy>
+            <encoder>
+                <pattern>${SQL_PATTERN}</pattern>
+            </encoder>
+        </appender>
+
+        <logger name="org.springframework" level="ERROR"/>
+        <logger name="org.apache.ibatis" level="ERROR"/>
+        <logger name="com.alibaba.druid" level="ERROR"/>
+        <logger name="org.mybatis.spring" level="ERROR"/>
+        <logger name="druid.sql" level="INFO"/>
+
+        <logger name="com.cambricon.inestia.modules.system.mapper">
+            <appender-ref ref="SQL"/>
+        </logger>
+
+        <root level="DEBUG">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="DEV_FILE" />
+        </root>
+    </springProfile>
+
+    <!-- 生产环境 -->
+    <springProfile name="prod">
+
+        <!-- 按天生成日志文件 -->
+        <appender name="PROD_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${PRO_FILE}</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${PRO_FILE}.%d{YYYY-MM-dd}.log</fileNamePattern>
+                <MaxHistory>15</MaxHistory>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>${PATTERN}</pattern>
+            </layout>
+        </appender>
+
+        <!-- 按天生成SQL日志文件 -->
+        <appender name="SQL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${PRO_SQL_FILE}</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${PRO_SQL_FILE}.%d{YYYY-MM-dd}.log</fileNamePattern>
+                <MaxHistory>15</MaxHistory>
+            </rollingPolicy>
+            <encoder>
+                <pattern>${SQL_PATTERN}</pattern>
+            </encoder>
+        </appender>
+
+        <logger name="org.springframework" level="ERROR"/>
+        <logger name="org.apache.ibatis" level="ERROR"/>
+        <logger name="com.alibaba.druid" level="ERROR"/>
+        <logger name="org.mybatis.spring" level="ERROR"/>
+        <logger name="druid.sql" level="INFO"/>
+
+        <logger name="com.cambricon.inestia.modules.system.mapper">
+            <appender-ref ref="SQL"/>
+        </logger>
+
+        <root level="DEBUG">
+            <appender-ref ref="PROD_FILE" />
+        </root>
+
+    </springProfile>
+</configuration>

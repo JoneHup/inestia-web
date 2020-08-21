@@ -52,6 +52,7 @@ public class HomeController {
         if (null != news) {
             newsQuery.setNewsId(news.getId());
         }
+//        newsQuery.setOrderBy("");
         PageResultSet<News> pageResultSet = newsService.findByPage(newsQuery);
         pageResultSet.setCurrentPage(newsQuery.getCurrentPage());
         model.addAttribute("firNews", news);

@@ -28,3 +28,7 @@ pagehelper: # 分页插件配置
 password: #shiro
   algorithmName: md5
   hashIterations: 2
+
+#日志配置
+logging:
+  config: classpath:logback-roncoo.xml
