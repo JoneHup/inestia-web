@@ -6,10 +6,11 @@
           WARNING - @mbg.generated
         -->
         <id column="id" property="id" jdbcType="BIGINT" />
-        <result column="title" property="title" jdbcType="VARCHAR" />
+        <result column="news_title" property="newsTitle" jdbcType="VARCHAR" />
         <result column="creator" property="creator" jdbcType="BIGINT" />
         <result column="source" property="source" jdbcType="VARCHAR" />
         <result column="pk_content" property="pk_content" jdbcType="BIGINT" />
+        <result column="img_num" property="imgNum" jdbcType="VARCHAR" />
         <result column="create_date" property="createTime" jdbcType="TIMESTAMP" />
         <result column="modify_date" property="modifyDate" jdbcType="TIMESTAMP" />
         <result column="dr" property="dr" jdbcType="BIT" />

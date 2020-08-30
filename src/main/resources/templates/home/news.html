@@ -106,11 +106,11 @@
                 <div class="item">
                     <a th:href="@{/home/news/detail(newsId=${firNews.id})}">
                         <div class="img">
-                            <img th:if="${not #strings.isEmpty(firNews.img)}" th:src="${firNews.img}" th:alt="${firNews.title}" />
+                            <img th:if="${not #strings.isEmpty(firNews.img)}" th:src="${firNews.img}" th:alt="${firNews.newsTitle}" />
                             <img th:if="${#strings.isEmpty(firNews.img)}" th:src="@{/static/home/img/news-base.jpg}" th:alt="${firNews.title}" />
                         </div>
                         <div class="txt">
-                            <h3>[[${firNews.title}]]</h3>
+                            <h3>[[${firNews.newsTitle}]]</h3>
                             <span class="time">[[${firNews.modifyTime}]]</span>
                             <span class="source">来源：[[${firNews.source}]]</span>
                             <p>[[${firNews.contentExt}]]</p>
@@ -125,8 +125,8 @@
                     <div class="item">
                         <a th:href="@{/home/news/detail(newsId=${row.id})}">
                             <div class="img">
-                                <img th:if="${not #strings.isEmpty(row.img)}" th:src="${row.img}" th:alt="${row.title}" />
-                                <img th:if="${#strings.isEmpty(row.img)}" th:src="@{/static/home/img/news-base.jpg}" th:alt="${row.title}" />
+                                <img th:if="${not #strings.isEmpty(row.img)}" th:src="${row.img}" th:alt="${row.newsTitle}" />
+                                <img th:if="${#strings.isEmpty(row.img)}" th:src="@{/static/home/img/news-base.jpg}" th:alt="${row.newsTitle}" />
                             </div>
                             <div class="txt">
                                 <div class="date">
@@ -134,7 +134,7 @@
                                     <span class="year">[[${row.month}]] <br />[[${row.year}]]</span>
                                 </div>
                                 <h3>
-                                    [[${row.title}]]
+                                    [[${row.newsTitle}]]
                                 </h3>
                                 <div class="source">[[${row.source}]]</div>
                             </div>

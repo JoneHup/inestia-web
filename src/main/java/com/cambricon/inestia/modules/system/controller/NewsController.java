@@ -46,7 +46,7 @@ public class NewsController extends BaseController {
     @PostMapping("/create")
     @RequiresPermissions("news:create")
     @SystemLog("创建新闻")
-    public Result create(@Valid News news) {
+    public Result create(@RequestBody @Valid News news) {
         newsService.createNews(news);
         return Result.success();
     }
@@ -55,7 +55,7 @@ public class NewsController extends BaseController {
     @PostMapping("/update")
     @RequiresPermissions("news:update")
     @SystemLog("更新新闻")
-    public Result update(News news) {
+    public Result update(@RequestBody @Valid News news) {
         newsService.updateNews(news);
         return Result.success();
     }

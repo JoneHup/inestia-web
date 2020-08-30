@@ -87,7 +87,7 @@ public class ShiroConfig {
      */
     @Bean
     public SimpleCookie sessionIdCookie() {
-        SimpleCookie simpleCookie = new SimpleCookie("sid");
+        SimpleCookie simpleCookie = new SimpleCookie("shiro.session");
         simpleCookie.setHttpOnly(true);
         simpleCookie.setMaxAge(-1);
         return simpleCookie;

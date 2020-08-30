@@ -4,9 +4,9 @@
     <contextName>logback</contextName>
 
     <!-- dev日志路径 -->
-    <property name="DEV_FILE_PATH" value="D:/DC/do/logs/qinzhi" />
+    <property name="DEV_FILE_PATH" value="/home/qinzhi/logs" />
     <!-- pro日志路径 -->
-    <property name="PRO_FILE_PATH" value="/home/run/logs" />
+    <property name="PRO_FILE_PATH" value="/home/qinzhi/logs" />
     <!-- 系统名称 -->
     <property name="SYSTEM_NAME" value="inestia" />
     <!-- 日志文件 -->

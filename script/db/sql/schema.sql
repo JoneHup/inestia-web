@@ -89,11 +89,12 @@ CREATE TABLE sys_log (
 
 CREATE TABLE sys_news (
   id bigint AUTO_INCREMENT COMMENT '主键',
-  title varchar(1000) COMMENT '标题',
+  news_title varchar(1000) COMMENT '标题',
   create_date datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   modify_date datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   creator bigint COMMENT '创建人',
   source varchar(100) COMMENT '来源',
+  img_num varchar(50) COMMENT '封页图片序号',
   pk_content bigint COMMENT '内容主键',
   dr bool default false COMMENT '是否删除',
   constraint pk_sys_news PRIMARY KEY (id)

@@ -52,7 +52,7 @@ public class NewsServiceImpl implements NewsService {
         WeekendCriteria<News, Object> criteria = example.weekendCriteria();
 
         if (!StringUtils.isEmpty(newsQuery.getTitle())) {
-            criteria.andLike(News::getTitle, "%" + newsQuery.getTitle() + "%");
+            criteria.andLike(News::getNewsTitle, "%" + newsQuery.getTitle() + "%");
         }
 
         newsQuery.setDr(false);

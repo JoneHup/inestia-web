@@ -20,6 +20,112 @@
     <link th:href="@{/static/home/css/jquery.fancybox.css}" rel="stylesheet" type="text/css" />
     <link th:href="@{/static/home/css/style.css}" rel="stylesheet" type="text/css" />
     <link th:href="@{/static/home/css/cp-p3.css}" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        @media (min-width: 768px) {
+            .page-cp-p2-box1 .item .img img {
+                width: 55px;
+                height: 50px;
+                top: 10px;
+                right: 645px;
+                position: absolute;
+            }
+        }
+        @media (min-width: 992px) {
+            .page-cp-p2-box1 .item .img img {
+                width: 55px;
+                height: 50px;
+                top: 20px;
+                right: 795px;
+                position: absolute;
+            }
+        }
+        @media (min-width: 1200px) {
+            .page-cp-p2-box1 .item .img img {
+                width: 55px;
+                height: 50px;
+                top: 24px;
+                right: 875px;
+                position: absolute;
+            }
+        }
+        @media (min-width: 1920px) {
+            .page-cp-p2-box1 .item .img img {
+                width: 55px;
+                height: 50px;
+                top: 24px;
+                right: 1000px;
+                position: absolute;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .page-cp-p2-box1 .item .txt {
+                width: 60%;
+                top: 25%;
+                right: 200px;
+            }
+        }
+        @media (min-width: 992px) {
+            .page-cp-p2-box1 .item .txt {
+                width: 60%;
+                top: 25%;
+                right: 200px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .page-cp-p2-box1 .item .txt {
+                width: 60%;
+                top: 25%;
+                right: 200px;
+            }
+        }
+        @media (min-width: 1920px) {
+            .page-cp-p2-box1 .item .txt {
+                width: 60%;
+                top: 20%;
+                right: 170px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .row{
+                width: 640px;
+                height: 169px;
+                top: 50%;
+                position: absolute;
+                right: 20px;
+            }
+        }
+        @media (min-width: 992px) {
+            .row{
+                width: 640px;
+                height: 169px;
+                top: 40%;
+                position: absolute;
+                right: 100px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .row{
+                width: 640px;
+                height: 169px;
+                top: 45%;
+                position: absolute;
+                right: 195px;
+            }
+        }
+        @media (min-width: 1920px) {
+            .row{
+                width: 640px;
+                height: 169px;
+                top: 36%;
+                position: absolute;
+                right: 195px;
+            }
+        }
+    </style>
+
     <script th:src="@{/static/home/js/jquery-1.12.4.min.js}"></script>
     <script>
         var _hmt = _hmt || [];
@@ -72,14 +178,9 @@
 <div class="scroll-nav page-cp-p2-box1" style="height: 250px;">
     <div class="container">
         <div class="item" style="border: none">
-            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_1.jpg}" alt="城市实时仿真" style="
-                width: 55px;
-                height: 50px;
-                top: 24px;
-                right: 875px;
-                position: absolute;"/>
+            <div class="img wow fadeInUpa myself"><img th:src="@{/static/home/img/solution/solution_1.jpg}" alt="城市实时仿真" />
             </div>
-            <div class="txt" style="width: 60%;top: 25%;right: 200px;">
+            <div class="txt">
                 <div class="tit wow fadeInUpa">
                     <h2>城市实时仿真</h2>
                 </div>
@@ -94,14 +195,9 @@
 <div class="scroll-nav page-cp-p2-box1" style="height: 250px;">
     <div class="container">
         <div class="item" style="border: none">
-            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_2.jpg}" alt="智能交通系统" style="
-                width: 55px;
-                height: 50px;
-                top: 24px;
-                right: 875px;
-                position: absolute;"/>
+            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_2.jpg}" alt="智能交通系统" />
             </div>
-            <div class="txt" style="width: 60%;top: 25%;right: 200px;">
+            <div class="txt">
                 <div class="tit wow fadeInUpa">
                     <h2>智能交通系统</h2>
                 </div>
@@ -113,17 +209,12 @@
     </div>
 </div>
 <a name="nav3" id="nav3"></a>
-<div class="scroll-nav page-cp-p2-box1" style="height: 400px;">
+<div class="scroll-nav page-cp-p2-box1" style="height: 440px;">
     <div class="container">
         <div class="item" style="border: none">
-            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_3.jpg}" alt="智能安防" style="
-                width: 55px;
-                height: 50px;
-                top: -23px;
-                right: 875px;
-                position: absolute;"/>
+            <div class="img wow fadeInUpa"><img th:src="@{/static/home/img/solution/solution_3.jpg}" alt="智能安防" />
             </div>
-            <div class="txt" style="width: 60%;top: 12%;right: 200px;">
+            <div class="txt">
                 <div class="tit wow fadeInUpa">
                     <h2>智能安防</h2>
                 </div>
@@ -132,12 +223,7 @@
                 </div>
             </div>
 
-            <div class="row" style="
-                width: 640px;
-                height: 169px;
-                top: 40%;
-                position: absolute;
-                right: 195px;">
+            <div class="row">
                 <div class="col-xs-3">
                     <div class="item" style="border: none">
                         <img th:src="@{/static/home/img/solution/solution_4.jpg}" alt="智能巡防">
@@ -163,6 +249,7 @@
         </div>
     </div>
 </div>
+<!--<div class="fashet"></div>&lt;!&ndash;撑高度  &ndash;&gt;-->
 
 <div class="page-cp-box-ad page-cp-box-ad-lx wow fadeInUpa">
     <a th:href="@{/home/weinfo(nav=${'nav5'})}">联系我们</a>

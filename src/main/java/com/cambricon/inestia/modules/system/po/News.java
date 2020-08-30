@@ -31,7 +31,7 @@ public class News {
      * 标题
      */
     @NotBlank(message = "标题不能为空")
-    private String title;
+    private String newsTitle;
 
     /**
      * 创建时间
@@ -94,6 +94,11 @@ public class News {
     @Transient
     private String img;
 
+    /**
+     * 封页图片序号
+     */
+    private String imgNum;
+
     public Long getId() {
         return id;
     }
@@ -102,12 +107,12 @@ public class News {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getNewsTitle() {
+        return newsTitle;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setNewsTitle(String newsTitle) {
+        this.newsTitle = newsTitle;
     }
 
     public Long getCreator() {
@@ -166,8 +171,19 @@ public class News {
         Matcher matcher = pattern.matcher(content);
         while (matcher.find()){
             Matcher matcherCd = Pattern.compile("src\\s*=\\s*\"?(.*?)(\"|>|\\s+)").matcher(matcher.group());
+            int index = 0;
             while (matcherCd.find()){
-                this.img = matcherCd.group(1);
+                index ++;
+                if (! StringUtils.isEmpty(this.imgNum)) {
+                    if (index == Integer.parseInt(this.imgNum)) {
+                        this.img = matcherCd.group(1);
+                        break;
+                    }
+                } else { //如果不指定图片索引，默认显示第一张
+                    this.img = matcherCd.group(1);
+                    break;
+                }
+
             }
             if (! StringUtils.isEmpty(this.img)){
                 break;
@@ -260,5 +276,13 @@ public class News {
 
     public void setPk_content(Long pk_content) {
         this.pk_content = pk_content;
+    }
+
+    public String getImgNum() {
+        return imgNum;
+    }
+
+    public void setImgNum(String imgNum) {
+        this.imgNum = imgNum;
     }
 }

@@ -180,7 +180,7 @@
                                             <span class="year">[[${row.month}]]<br />[[${row.year}]]</span>
                                         </div>
                                         <div class="tit">
-                                            <a th:href="@{/home/news/detail(newsId=${row.id})}">[[${row.title}]]</a>
+                                            <a th:href="@{/home/news/detail(newsId=${row.id})}">[[${row.newsTitle}]]</a>
                                         </div>
                                         <div class="des">
                                             <p th:utext="${row.contentExt}"></p>

@@ -64,7 +64,7 @@
     <div class="container">
         <div class="left">
             <div class="tit">
-                <h1>[[${news.title}]]</h1>
+                <h1>[[${news.newsTitle}]]</h1>
                 <span class="time">[[${news.modifyTime}]]</span>
                 <span class="source">[[${news.source}]]</span>
             </div>
@@ -77,7 +77,7 @@
                 <h3>更多新闻</h3>
                 <ul>
                     <th th:each="row : ${resultSet.randomRows}">
-                        <li><a th:href="@{/home/news/detail(newsId=${row.id})}">[[${row.title}]]<span>[[${row.modifyTime}]]</span></a></li>
+                        <li><a th:href="@{/home/news/detail(newsId=${row.id})}">[[${row.newsTitle}]]<span>[[${row.modifyTime}]]</span></a></li>
                     </th>
                 </ul>
             </div>
