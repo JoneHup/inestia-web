@@ -20,6 +20,7 @@
     <link th:href="@{/static/home/css/jquery.fancybox.css}" rel="stylesheet" type="text/css" />
     <link th:href="@{/static/home/css/style.css}" rel="stylesheet" type="text/css" />
     <link th:href="@{/static/home/css/cp-p3.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/static/home/css/jquery.eeyellow.Timeline.css}" rel="stylesheet" type="text/css" />
     <script th:src="@{/static/home/js/jquery-1.12.4.min.js}"></script>
     <script>
         var _hmt = _hmt || [];
@@ -32,6 +33,7 @@
 
         })();
     </script>
+    <link rel="stylesheet" href="../../static/home/css/jquery.eeyellow.Timeline.css">
 
 </head>
 <body>
@@ -51,8 +53,10 @@
             <div class="page-nav-right-md" id="page-nav-md-a">
                 <a th:if="${cusdomQuery.nav} eq 'nav1'" href="#nav1" class="active">超算中心简介</a>
                 <a th:if="${cusdomQuery.nav} ne 'nav1'" href="#nav1">超算中心简介</a>
-                <a th:if="${cusdomQuery.nav} eq 'nav2'" href="#nav2" class="active">超算中心入口</a>
-                <a th:if="${cusdomQuery.nav} ne 'nav2'" href="#nav2">超算中心入口</a>
+                <a th:if="${cusdomQuery.nav} eq 'nav2'" href="#nav2" class="active">超算中心历程</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav2'" href="#nav2">超算中心历程</a>
+                <a th:if="${cusdomQuery.nav} eq 'nav3'" href="#nav3" class="active">超算中心入口</a>
+                <a th:if="${cusdomQuery.nav} ne 'nav3'" href="#nav3">超算中心入口</a>
             </div>
         </div>
     </div>
@@ -81,6 +85,127 @@
 </div>
 
 <a name="nav2" id="nav2"></a>
+<div class="scroll-nav page-cp-box-tit page-hy-tit">
+    <div class="container">
+        <div class="tit wow fadeInUpa">
+            <h2>超算中心历程</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="VivaTimeline">
+                <dl>
+                    <dt>2020</dt>
+                    <dd class="pos-left clearfix">
+                        <div class="circ"></div>
+                        <div class="time">2020年6月</div>
+                        <div class="events">
+                            <div class="events-header">超算中心申报粤港澳联合实验室</div>
+                            <div class="events-body">
+                                <div class="row">
+                                    <div class="events-desc">
+                                        详细介绍。。。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <dd class="pos-right clearfix">
+                        <div class="circ"></div>
+                        <div class="time">2020年5月</div>
+                        <div class="events">
+                            <div class="events-header">超算中心开始实施“服务提升、价格优惠”计划</div>
+                            <div class="events-body">
+                                <div class="row">
+                                    <div class="events-desc">
+                                        详细介绍。。。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <dd class="pos-left clearfix">
+                        <div class="circ"></div>
+                        <div class="time">2020年2月</div>
+                        <div class="events">
+                            <div class="events-header">与第三方合作的疫情预测模型在超算中心上线，助力抗疫工作</div>
+                            <div class="events-body">
+                                <div class="row">
+                                    <div class="events-desc">
+                                        详细介绍。。。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+
+                    <dt>2019</dt>
+                    <dd class="pos-right clearfix">
+                        <div class="circ"></div>
+                        <div class="time">2019年12月</div>
+                        <div class="events">
+                            <div class="events-header">超算中心澳门大学分中心挂牌成立</div>
+                            <div class="events-body">
+                                <div class="row">
+                                    <div class="events-desc">
+                                        详细介绍。。。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <dd class="pos-left clearfix">
+                        <div class="circ"></div>
+                        <div class="time">2019年12月</div>
+                        <div class="events">
+                            <div class="events-header">超算中心二期通过专家验收</div>
+                            <div class="events-body">
+                                <div class="row">
+                                    <div class="events-desc">
+                                        详细介绍。。。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <dd class="pos-right clearfix">
+                        <div class="circ"></div>
+                        <div class="time">2019年9月</div>
+                        <div class="events">
+                            <div class="events-header">超算中心一期通过专家验收</div>
+                            <div class="events-body">
+                                <div class="row">
+                                    <div class="events-desc">
+                                        详细介绍。。。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <dd class="pos-left clearfix">
+                        <div class="circ"></div>
+                        <div class="time">2019年4月</div>
+                        <div class="events">
+                            <div class="events-header">横琴新区与中科院计算所签署战略合作协议共建横琴人工智能超算中心</div>
+                            <div class="events-body">
+                                <div class="row">
+                                    <div class="events-desc">
+                                        详细介绍。。。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a name="nav3" id="nav3"></a>
 <div class="scroll-nav page-cp-box-tit page-hy-tit">
     <div class="container">
         <div class="tit wow fadeInUpa">
@@ -113,6 +238,13 @@
 
 <footer th:include="home/footer :: footer"></footer>
 <script type="text/javascript">
+    $(document).ready(function () {
+        $('.VivaTimeline').vivaTimeline({
+            carousel: true,
+            carouselTime: 3000
+        });
+    });
+
     $('#navli a').each(function(){
         if ($(this).attr("href")=='javaScript:;') {
             $(this).addClass("no_pointer");
@@ -134,5 +266,6 @@
 <script th:src="@{/static/home/js/wow.js}"></script>
 <script th:src="@{/static/home/js/jquery-ui.min.js}"></script>
 <script th:src="@{/static/home/js/page.js}"></script>
+<script th:src="@{/static/home/js/jquery.eeyellow.Timeline.js}"></script>
 </body>
 </html>

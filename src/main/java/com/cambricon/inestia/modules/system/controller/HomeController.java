@@ -105,4 +105,9 @@ public class HomeController {
     public String map() {
         return "home/map";
     }
+
+    @GetMapping("/timeline")
+    public String timeline() {
+        return "home/timeline";
+    }
 }
