@@ -25,7 +25,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Version: 1.0
  **/
 @Controller
-@RequestMapping("/home")
 public class HomeController {
 
     @Autowired
@@ -35,14 +34,14 @@ public class HomeController {
     @Autowired
     private JobService jobService;
 
-    @GetMapping("/index")
+    @GetMapping("/")
     public String home(NewsQuery newsQuery,Model model) {
         PageResultSet<News> pageResultSet = newsService.findByPage(newsQuery);
         model.addAttribute("resultSet", pageResultSet);
         return "home/index";
     }
 
-    @GetMapping("/news")
+    @GetMapping("/home/news")
     public String news(NewsQuery newsQuery, Model model) {
         News news = newsService.findLatestNews();
         if (null != news) {
@@ -55,7 +54,7 @@ public class HomeController {
         return "home/news";
     }
 
-    @GetMapping("/news/detail")
+    @GetMapping("/home/news/detail")
     public String newsDetail(NewsQuery newsQuery, Model model) {
         News news = newsService.findById(newsQuery);
         //获取更多新闻
@@ -65,7 +64,7 @@ public class HomeController {
         return "home/newsdetail";
     }
 
-    @GetMapping("/weinfo")
+    @GetMapping("/home/weinfo")
     public String weInfo(CustomQuery cusdomQuery,Model model) {
         model.addAttribute("cusdomQuery", cusdomQuery);
         JobQuery jobQuery = new JobQuery();
@@ -74,19 +73,19 @@ public class HomeController {
         return "home/weinfo";
     }
 
-    @GetMapping("/solution")
+    @GetMapping("/home/solution")
     public String solution(CustomQuery cusdomQuery, Model model) {
         model.addAttribute("cusdomQuery", cusdomQuery);
         return "home/solution";
     }
 
-    @GetMapping("/platform")
+    @GetMapping("/home/platform")
     public String platform(CustomQuery cusdomQuery, Model model) {
         model.addAttribute("cusdomQuery", cusdomQuery);
         return "home/platform";
     }
 
-    @GetMapping("/product")
+    @GetMapping("/home/product")
     public String product(ProductQuery productQuery, Model model) {
         Product product = productService.findById(productQuery);
         model.addAttribute("product", product);
@@ -97,12 +96,12 @@ public class HomeController {
         return "home/product";
     }
 
-    @GetMapping("/map")
+    @GetMapping("/home/map")
     public String map() {
         return "home/map";
     }
 
-    @GetMapping("/timeline")
+    @GetMapping("/home/timeline")
     public String timeline() {
         return "home/timeline";
     }
