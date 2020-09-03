@@ -8,12 +8,6 @@ public interface NewsService {
 
     PageResultSet<News> findByPage(NewsQuery newsQuery);
 
-    void createNews(News news);
-
-    void updateNews(News news);
-
-    void deleteNews(Long id);
-
     News findById(NewsQuery newsQuery);
 
     News findLatestNews();

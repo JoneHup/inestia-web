@@ -6,22 +6,18 @@ import com.cambricon.inestia.modules.system.mapper.NewsContentMapper;
 import com.cambricon.inestia.modules.system.mapper.NewsMapper;
 import com.cambricon.inestia.modules.system.po.News;
 import com.cambricon.inestia.modules.system.po.NewsContent;
-import com.cambricon.inestia.modules.system.po.User;
 import com.cambricon.inestia.modules.system.query.NewsQuery;
 import com.cambricon.inestia.modules.system.service.NewsService;
 import com.cambricon.inestia.modules.system.service.UserService;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.weekend.Weekend;
 import tk.mybatis.mapper.weekend.WeekendCriteria;
 
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -87,40 +83,6 @@ public class NewsServiceImpl implements NewsService {
         resultSet.setRandomRows(page.getResult());
         resultSet.setTotal(page.getTotal());
         return resultSet;
-    }
-
-    @Override
-    @Transactional
-    public void createNews(News news) {
-        NewsContent newsContent = new NewsContent();
-        newsContent.setContent(news.getContent());
-        newsContentMapper.insert(newsContent);
-
-        String username = (String) SecurityUtils.getSubject().getPrincipal();
-        User user = userService.findByUsername(username);
-        news.setCreator(user.getId());
-        news.setCreateDate(new Date());
-        news.setModifyDate(new Date());
-        news.setPk_content(newsContent.getId());
-        newsMapper.insertSelective(news);
-    }
-
-    @Override
-    @Transactional
-    public void updateNews(News news) {
-        NewsContent newsContent = new NewsContent();
-        newsContent.setId(news.getPk_content());
-        newsContent.setContent(news.getContent());
-        newsContentMapper.updateByPrimaryKeySelective(newsContent);
-
-        news.setModifyDate(new Date());
-        newsMapper.updateByPrimaryKeySelective(news);
-    }
-
-    @Override
-    @Transactional
-    public void deleteNews(Long id) {
-        newsMapper.deleteByPrimaryKey(id);
     }
 
     @Override

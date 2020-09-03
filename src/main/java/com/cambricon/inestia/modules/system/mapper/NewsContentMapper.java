@@ -11,5 +11,4 @@ import com.cambricon.inestia.modules.system.po.NewsContent;
  **/
 public interface NewsContentMapper extends MyMapper<NewsContent> {
 
-    int insert(NewsContent newsContent);
 }

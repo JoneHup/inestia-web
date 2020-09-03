@@ -7,7 +7,4 @@ import com.cambricon.inestia.modules.system.query.JobQuery;
 public interface JobService {
     PageResultSet<Job> findByPage(JobQuery jobQuery);
 
-    void createJob(Job job);
-
-    void updateJob(Job job);
 }
