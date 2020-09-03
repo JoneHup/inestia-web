@@ -263,7 +263,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>inestia-web</finalName>
+        <finalName>inestia-manage</finalName>
     </build>
 
 </project>
