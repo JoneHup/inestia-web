@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication(exclude = {QuartzAutoConfiguration.class,DruidDataSourceAutoConfigure.class})
 @EnableTransactionManagement
-//@MapperScan(basePackages = "com.cambricon.inestia.modules.*.mapper")
 public class InestiaWebApplication extends SpringBootServletInitializer implements CommandLineRunner {
 
     private Logger logger = LoggerFactory.getLogger(InestiaWebApplication.class);
