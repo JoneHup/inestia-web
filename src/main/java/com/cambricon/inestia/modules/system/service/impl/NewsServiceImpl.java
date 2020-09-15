@@ -6,6 +6,7 @@ import com.cambricon.inestia.modules.system.mapper.NewsContentMapper;
 import com.cambricon.inestia.modules.system.mapper.NewsMapper;
 import com.cambricon.inestia.modules.system.po.News;
 import com.cambricon.inestia.modules.system.po.NewsContent;
+import com.cambricon.inestia.modules.system.po.User;
 import com.cambricon.inestia.modules.system.query.NewsQuery;
 import com.cambricon.inestia.modules.system.service.NewsService;
 import com.cambricon.inestia.modules.system.service.UserService;
@@ -13,13 +14,9 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.weekend.Weekend;
 import tk.mybatis.mapper.weekend.WeekendCriteria;
-
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * @Description: TODO
@@ -54,15 +51,22 @@ public class NewsServiceImpl implements NewsService {
         newsQuery.setDr(false);
         criteria.andEqualTo(News::getDr,newsQuery.getDr());
 
+        if (null != newsQuery.getNewsId()){
+            criteria.andNotEqualTo(News::getId,newsQuery.getNewsId());
+        }
+
         PageResultSet<News> resultSet = new PageResultSet<>();
 
         Page page = PageHelper.offsetPage(newsQuery.getOffset(), newsQuery.getLimit()).doSelectPage(()->
                 newsMapper.selectByExample(example).forEach(e -> {
-                    e.setCreatorName(userService.findOne(e.getCreator()).getUsername());
+                    User user = userService.findOne(e.getCreator());
+                    if(null != user) {
+                        e.setCreatorName(user.getUsername());
+                    }
                     e.setModifyTime(DateUtil.toDateTimeString(e.getModifyDate()));
         }));
 
-        List list = page.getResult();
+        /*List list = page.getResult();
         if (! CollectionUtils.isEmpty(list)) {
             Iterator iterator = list.iterator();
             while (iterator.hasNext()){
@@ -72,12 +76,12 @@ public class NewsServiceImpl implements NewsService {
                 }
                 news.setContent(newsContentMapper.selectByPrimaryKey(news.getPk_content()).getContent());
             }
-        }
+        }*/
 
-       /* for (Object o : page.getResult()) {
+        for (Object o : page.getResult()) {
             News news = (News)o;
             news.setContent(newsContentMapper.selectByPrimaryKey(news.getPk_content()).getContent());
-        }*/
+        }
 
         resultSet.setRows(page.getResult());
         resultSet.setRandomRows(page.getResult());

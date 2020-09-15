@@ -107,7 +107,7 @@
                     <a th:href="@{/home/news/detail(newsId=${firNews.id})}">
                         <div class="img">
                             <img th:if="${not #strings.isEmpty(firNews.img)}" th:src="${firNews.img}" th:alt="${firNews.newsTitle}" />
-                            <img th:if="${#strings.isEmpty(firNews.img)}" th:src="@{/static/home/img/news-base.jpg}" th:alt="${firNews.title}" />
+                            <img th:if="${#strings.isEmpty(firNews.img)}" th:src="@{/static/home/img/news-base.jpg}" th:alt="${firNews.newsTitle}" />
                         </div>
                         <div class="txt">
                             <h3>[[${firNews.newsTitle}]]</h3>
