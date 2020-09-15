@@ -37,7 +37,7 @@ public class User {
      * 密码
      */
     @NotBlank(message = "密码不能为空")
-    @Min(value = 6,message = "密码不能低于6位")
+//    @Min(value = 6,message = "密码不能低于6位")
     private String password;
     /**
      * 加密密码的盐
