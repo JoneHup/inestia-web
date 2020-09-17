@@ -402,9 +402,9 @@
             columns: [
                 {field: 'state', checkbox: true},
                 {field: 'id', title: '编号', sortable: true, halign: 'left', visible: false},
-                {field: 'newsTitle', title: '标题', sortable: true, halign: 'left'},
-                {field: 'source', title: '来源', sortable: true, halign: 'left'},
-                {field: 'content', title: '内容', sortable: true, halign: 'left',formatter:function(value,row,index){
+                {field: 'newsTitle', title: '标题', sortable: false, halign: 'left'},
+                {field: 'source', title: '来源', sortable: false, halign: 'left'},
+                {field: 'content', title: '内容', sortable: false, halign: 'left',formatter:function(value,row,index){
                         if(row.contentExt){
                             var length=row.contentExt.length;
                             if(length&&length>10){
@@ -414,9 +414,9 @@
                         }
                     }
                 },
-                {field: 'pk_content', title: '内容id', sortable: true, halign: 'left',visible: false},
-                {field: 'creatorName', title: '创建人', sortable: true, halign: 'left'},
-                {field: 'modifyTime', title: '创建时间', sortable: true, halign: 'left'},
+                {field: 'pk_content', title: '内容id', sortable: false, halign: 'left',visible: false},
+                {field: 'creatorName', title: '创建人', sortable: false, halign: 'left'},
+                {field: 'modifyTime', title: '创建时间', sortable: false, halign: 'left'},
                 {
                     field: 'action',
                     title: '操作',

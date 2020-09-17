@@ -4,13 +4,13 @@
 <!-- Content Header (Page header) -->
 <section class="content-header" style="">
     <h1>
-        招聘管理
-        <small>系统招聘管理页面</small>
+        发展历程
+        <small>发展历程管理页面</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
         <li><a href="#">系统管理</a></li>
-        <li class="active">系统招聘管理</li>
+        <li class="active">发展历程管理</li>
     </ol>
 </section>
 
@@ -23,8 +23,8 @@
                     <div id="toolbar">
                         <form class="form-inline" id="searchForm">
                             <div class="form-group">
-                                <label for="searchName"> 岗位名称</label>
-                                <input type="text" class="form-control input-sm" name="jobName" id="searchName" placeholder="请输入岗位名称">
+                                <label for="searchName"> 历程标题</label>
+                                <input type="text" class="form-control input-sm" name="processName" id="searchName" placeholder="请输入历程标题">
                             </div>
                             <div class="btn-group btn-group-sm">
                                 <button type="button" class="btn btn-default" onclick="javascript:$('table').bootstrapTable('refresh', {silent: true});">
@@ -39,19 +39,19 @@
                         </form>
                         <div class="btn-group btn-group-sm">
                             <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                            <button shiro:hasPermission="job:create" type="button" id="addBtn" class="btn btn-default"
+                            <button shiro:hasPermission="process:create" type="button" id="addBtn" class="btn btn-default"
                                     data-toggle="modal"
                                     data-target="#addModal"><i class="glyphicon glyphicon-plus"></i> 新增
                             </button>
                             <!-- Indicates caution should be taken with this action -->
-                            <button shiro:hasPermission="job:update" type="button" id="editBtn" class="btn btn-default"
+                            <button shiro:hasPermission="process:update" type="button" id="editBtn" class="btn btn-default"
                                     data-toggle="modal"
                                     data-target="#editModal"
                                     data-action="{type:'editable',form:'#editForm',table:'#table'}"
                                     disabled><i class="glyphicon glyphicon-edit"></i> 修改
                             </button>
                             <!-- Indicates a dangerous or potentially negative action -->
-                            <button shiro:hasPermission="job:delete" type="button" id="deleteBtn" class="btn btn-default" data-toggle="modal"
+                            <button shiro:hasPermission="process:delete" type="button" id="deleteBtn" class="btn btn-default" data-toggle="modal"
                                     data-target="#deleteModal"
                                     data-action="{type:'delete',form:'#deleteForm',idField:'id',table:'#table'}"
                                     disabled><i class="glyphicon glyphicon-remove"></i> 删除
@@ -78,29 +78,24 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="addModalLabel">创建招聘</h4>
+                <h4 class="modal-title" id="addModalLabel">创建历程</h4>
             </div>
             <div class="modal-body">
                 <form id="addForm">
                     <div class="form-group">
-                        <label class="control-label" for="jobName"><span class="asterisk">*</span>岗位名称:</label>
-                        <input id="jobName" type="text" class="form-control" name="jobName" placeholder="输入岗位名称"
+                        <label class="control-label" for="processName"><span class="asterisk">*</span>历程标题:</label>
+                        <input id="processName" type="text" class="form-control" name="processName" placeholder="输入历程标题"
                                minlength="3" required>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="jobDescription">岗位职责:</label>
-                        <textarea id="jobDescription" class="form-control" name="jobDescription" placeholder="输入岗位职责"/>
+                        <label class="control-label" for="introduction">历程介绍:</label>
+                        <textarea id="introduction"  class="form-control" name="introduction" placeholder="输入历程介绍"/>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="jobRequire">岗位要求:</label>
-                        <textarea id="jobRequire"  class="form-control" name="jobRequire" placeholder="输入岗位要求"/>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="jobsite">工作地点:</label>
-                        <input id="jobsite" type="text" class="form-control" name="jobsite" placeholder="输入工作地点">
+                        <label class="control-label" for="publishTime">发布日期:</label>
+                        <input id="publishTime" type="date" class="form-control" name="publishTime" placeholder="输入发布日期">
                         <div class="help-block with-errors"></div>
                     </div>
                 </form>
@@ -108,7 +103,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="submit" form="addForm" class="btn btn-primary"
-                        data-action="{type:'submit',form:'#addForm',url:'@{/job/create}',after:'$.myAction.refreshTable'}">
+                        data-action="{type:'submit',form:'#addForm',url:'@{/process/create}',after:'$.myAction.refreshTable'}">
                     确定
                 </button>
             </div>
@@ -122,31 +117,25 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="editModalLabel">修改招聘</h4>
+                <h4 class="modal-title" id="editModalLabel">修改历程</h4>
             </div>
             <div class="modal-body">
                 <form id="editForm">
                     <input type="hidden" name="id"/>
                     <div class="form-group">
-                        <label class="control-label" for="jobName"><span class="asterisk">*</span>岗位名称:</label>
-                        <input id="editJobName" type="text" class="form-control" name="jobName" placeholder="输入岗位名称"
+                        <label class="control-label" for="processName"><span class="asterisk">*</span>历程标题:</label>
+                        <input id="editProcessName" type="text" class="form-control" name="processName" placeholder="输入历程标题"
                                minlength="3" required>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="jobDescription"><span class="asterisk">*</span>岗位职责:</label>
-                        <input id="editJobDescription" type="text" class="form-control" name="jobDescription" placeholder="输入岗位职责"
-                               required>
+                        <label class="control-label" for="introduction">历程介绍:</label>
+                        <textarea id="editIntroduction" class="form-control" name="introduction" placeholder="输入历程介绍"/>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="jobRequire">岗位要求:</label>
-                        <input id="editJobRequire" type="text" class="form-control" name="jobRequire" placeholder="输入岗位要求">
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="jobsite">工作地点:</label>
-                        <input id="editJobsite" type="text" class="form-control" name="jobsite" placeholder="输入工作地点">
+                        <label class="control-label" for="publishTime">发布日期:</label>
+                        <input id="editPublishTime" type="date" class="form-control" name="publishTime" placeholder="输入发布日期">
                         <div class="help-block with-errors"></div>
                     </div>
                 </form>
@@ -154,7 +143,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="submit" form="editForm" class="btn btn-primary"
-                        data-action="{type:'submit',form:'#editForm',url:'@{/job/update}',after:'$.myAction.refreshTable'}">
+                        data-action="{type:'submit',form:'#editForm',url:'@{/process/update}',after:'$.myAction.refreshTable'}">
                     确定
                 </button>
             </div>
@@ -167,7 +156,7 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="deleteSmallModalLabel">删除招聘</h4>
+                <h4 class="modal-title" id="deleteSmallModalLabel">删除历程</h4>
             </div>
             <div class="modal-body">
                 <form id="deleteForm"></form>
@@ -176,7 +165,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="button" form="deleteForm" class="btn btn-primary"
-                        data-action="{type:'submit',form:'#deleteForm',url:'@{/job/delete}',after:'$.myAction.refreshTable'}">
+                        data-action="{type:'submit',form:'#deleteForm',url:'@{/process/delete}',after:'$.myAction.refreshTable'}">
                     确定
                 </button>
             </div>
@@ -186,8 +175,8 @@
 
 <div id="actionButtons" class="admin-hide">
     <a class="like" href="javascript:void(0)" data-toggle="tooltip" title="Like"><i class="glyphicon glyphicon-heart"></i></a>　
-    <a shiro:hasPermission="job:update" class="edit ml10" href="javascript:void(0)" data-toggle="tooltip" title="编辑"><i class="glyphicon glyphicon-edit"></i></a>　
-    <a shiro:hasPermission="job:delete" class="remove ml10" href="javascript:void(0)" data-toggle="tooltip" title="删除"><i class="glyphicon glyphicon-remove"></i></a>　
+    <a shiro:hasPermission="process:update" class="edit ml10" href="javascript:void(0)" data-toggle="tooltip" title="编辑"><i class="glyphicon glyphicon-edit"></i></a>　
+    <a shiro:hasPermission="process:delete" class="remove ml10" href="javascript:void(0)" data-toggle="tooltip" title="删除"><i class="glyphicon glyphicon-remove"></i></a>　
 </div>
 
 <script th:inline="javascript">
@@ -198,33 +187,23 @@
         // bootstrap table初始化
         // http://bootstrap-table.wenzhixin.net.cn/zh-cn/documentation/
         $table.bootstrapTable({
-            url: CONTEXT_PATH + '/job/list',
+            url: CONTEXT_PATH + '/process/list',
             idField: 'id',
             columns: [
                 {field: 'state', checkbox: true},
                 {field: 'id', title: '编号', sortable: true, halign: 'left', visible: false},
-                {field: 'jobName', title: '岗位名称', sortable: false, halign: 'left'},
-                {field: 'jobDescription', title: '岗位职责', sortable: false, halign: 'left',formatter:function(value,row,index){
-                        if(row.jobDescription){
-                            var length=row.jobDescription.length;
+                {field: 'processName', title: '历程标题', sortable: false, halign: 'left'},
+                {field: 'introduction', title: '历程介绍', sortable: false, halign: 'left',formatter:function(value,row,index){
+                        if(row.introduction){
+                            var length=row.introduction.length;
                             if(length&&length>10){
-                                return"<span title ='"+row.jobDescription+"'>"+row.jobDescription.substring(0,10)+ "..." +"</span>"
+                                return"<span title ='"+row.introduction+"'>"+row.introduction.substring(0,10)+ "..." +"</span>"
                             }
-                            return"<span title ='"+row.jobDescription+"'>"+row.jobDescription+"</span>"
+                            return"<span title ='"+row.introduction+"'>"+row.introduction+"</span>"
                         }
                     }
                 },
-                {field: 'jobRequire', title: '岗位要求', sortable: false, halign: 'left',formatter:function(value,row,index){
-                        if(row.jobRequire){
-                            var length=row.jobRequire.length;
-                            if(length&&length>10){
-                                return"<span title ='"+row.jobRequire+"'>"+row.jobRequire.substring(0,10)+ "..." +"</span>"
-                            }
-                            return"<span title ='"+row.jobRequire+"'>"+row.jobRequire+"</span>"
-                        }
-                    }
-                },
-                {field: 'jobsite', title: '工作地点', sortable: false, halign: 'left'},
+                {field: 'publishTime', title: '发布日期', sortable: false, halign: 'left'},
                 {
                     field: 'action',
                     title: '操作',

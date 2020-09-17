@@ -1,5 +1,6 @@
 package com.cambricon.inestia.core.utils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -249,6 +250,22 @@ public class DateUtil {
             return null;
         }
         return toFirstTime(date, Calendar.DAY_OF_MONTH);
+    }
+
+    /**
+     * 转换为日期, 如 2012-08-08
+     *
+     * @param s 待处理的日期
+     * @return 日期
+     */
+    public static Date toDate(String s) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            return simpleDateFormat.parse(s);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     /**

@@ -54,7 +54,7 @@ public class JobController {
 
     @ResponseBody
     @PostMapping("/update")
-    @RequiresPermissions("news:update")
+    @RequiresPermissions("job:update")
     @SystemLog("更新招聘")
     public Result update(Job job) {
         jobService.updateJob(job);

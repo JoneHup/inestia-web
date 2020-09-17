@@ -8,6 +8,7 @@ drop table if exists sys_product;
 drop table if exists sys_news;
 drop table if exists sys_news_content;
 drop table if exists sys_job;
+drop table if exists sys_process;
 
 create table sys_user (
   id bigint auto_increment COMMENT '编号',
@@ -129,3 +130,15 @@ CREATE TABLE sys_job (
   constraint pk_sys_job PRIMARY KEY (id)
 )  CHARSET=utf8 ENGINE=InnoDB COMMENT='系统招聘表';
 create index sys_job_name_index on sys_job(job_name);
+
+CREATE TABLE sys_process (
+  id bigint AUTO_INCREMENT COMMENT '主键',
+  process_name varchar(100) COMMENT '历程标题',
+  introduction varchar(5000) COMMENT '历程介绍',
+  publish_date varchar(1000) COMMENT '发布日期',
+  create_date datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  modify_date datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  dr bool default false COMMENT '是否删除',
+  constraint pk_sys_process PRIMARY KEY (id)
+)  CHARSET=utf8 ENGINE=InnoDB COMMENT='系统历程表';
+create index sys_process_name_index on sys_process(process_name);
