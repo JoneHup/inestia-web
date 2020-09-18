@@ -97,122 +97,24 @@
     <div class="row">
         <div class="col-md-12">
             <div class="VivaTimeline">
-                <dl>
-                    <dt>2020</dt>
-                    <dd class="pos-left clearfix">
-                        <div class="circ"></div>
-                        <div class="time">2020年6月</div>
-                        <div class="events">
-                            <div class="events-header">超算中心申报粤港澳联合实验室</div>
-                            <div class="events-body">
-                                <div class="row">
-                                    <div class="events-desc">
-                                        详细介绍。。。
+                <dl th:each="processVo : ${processList}">
+                    <dt>[[${processVo.year}]]</dt>
+                    <th th:each="process : ${processVo.processes}">
+                        <dd th:class="${process.position} + ' clearfix'">
+                            <div class="circ"></div>
+                            <div class="time">[[${process.publishTime}]]</div>
+                            <div class="events">
+                                <div class="events-header">[[${process.processName}]]</div>
+                                <div class="events-body">
+                                    <div class="row">
+                                        <div class="events-desc">
+                                            [[${process.introduction}]]
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </dd>
-                    <dd class="pos-right clearfix">
-                        <div class="circ"></div>
-                        <div class="time">2020年5月</div>
-                        <div class="events">
-                            <div class="events-header">超算中心开始实施“服务提升、价格优惠”计划</div>
-                            <div class="events-body">
-                                <div class="row">
-                                    <div class="events-desc">
-                                        详细介绍。。。
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </dd>
-                    <dd class="pos-left clearfix">
-                        <div class="circ"></div>
-                        <div class="time">2020年2月</div>
-                        <div class="events">
-                            <div class="events-header">与第三方合作的疫情预测模型在超算中心上线，助力抗疫工作</div>
-                            <div class="events-body">
-                                <div class="row">
-                                    <div class="events-desc">
-                                        详细介绍。。。
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </dd>
-
-                    <dt>2019</dt>
-                    <dd class="pos-right clearfix">
-                        <div class="circ"></div>
-                        <div class="time">2019年12月</div>
-                        <div class="events">
-                            <div class="events-header">超算中心澳门大学分中心挂牌成立</div>
-                            <div class="events-body">
-                                <div class="row">
-                                    <div class="events-desc">
-                                        详细介绍。。。
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </dd>
-                    <dd class="pos-left clearfix">
-                        <div class="circ"></div>
-                        <div class="time">2019年12月</div>
-                        <div class="events">
-                            <div class="events-header">超算中心二期通过专家验收</div>
-                            <div class="events-body">
-                                <div class="row">
-                                    <div class="events-desc">
-                                        详细介绍。。。
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </dd>
-                    <dd class="pos-right clearfix">
-                        <div class="circ"></div>
-                        <div class="time">2019年9月</div>
-                        <div class="events">
-                            <div class="events-header">超算中心一期通过专家验收</div>
-                            <div class="events-body">
-                                <div class="row">
-                                    <div class="events-desc">
-                                        详细介绍。。。
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </dd>
-                    <dd class="pos-left clearfix">
-                        <div class="circ"></div>
-                        <div class="time">2019年9月</div>
-                        <div class="events">
-                            <div class="events-header">计算平台获批广东省高水平创新研究院</div>
-                            <div class="events-body">
-                                <div class="row">
-                                    <div class="events-desc">
-                                        详细介绍。。。
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </dd>
-                    <dd class="pos-right clearfix">
-                        <div class="circ"></div>
-                        <div class="time">2019年4月</div>
-                        <div class="events">
-                            <div class="events-header">横琴新区与中科院计算所签署战略合作协议共建横琴人工智能超算中心</div>
-                            <div class="events-body">
-                                <div class="row">
-                                    <div class="events-desc">
-                                        详细介绍。。。
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </dd>
+                        </dd>
+                    </th>
                 </dl>
             </div>
         </div>

@@ -134,6 +134,21 @@ public class DateUtil {
     }
 
     /**
+     * 转换为日期字符串, 如 2012年08月
+     *
+     * @param date 待处理的日期
+     * @return 日期字符串
+     */
+    public static String toMonthString(Date date) {
+        if (date == null) {
+            return null;
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月");
+        return sdf.format(date);
+    }
+
+
+    /**
      * 转换为时间字符串, 如 20:00:00.000
      *
      * @param date 待处理的日期
@@ -273,5 +288,16 @@ public class DateUtil {
     public static long getMillisOfDay(Date date) {
         Date start = toStartTime(date);
         return date.getTime() - start.getTime();
+    }
+
+    /**
+     * 获取年份
+     * @param date
+     * @return
+     */
+    public static int getYear(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return calendar.get(Calendar.YEAR);
     }
 }

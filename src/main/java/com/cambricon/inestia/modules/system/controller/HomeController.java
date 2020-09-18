@@ -1,22 +1,26 @@
 package com.cambricon.inestia.modules.system.controller;
 
+import com.cambricon.inestia.core.utils.DateUtil;
 import com.cambricon.inestia.core.utils.PageResultSet;
 import com.cambricon.inestia.modules.system.po.Job;
 import com.cambricon.inestia.modules.system.po.News;
+import com.cambricon.inestia.modules.system.po.Process;
 import com.cambricon.inestia.modules.system.po.Product;
-import com.cambricon.inestia.modules.system.query.CustomQuery;
-import com.cambricon.inestia.modules.system.query.JobQuery;
-import com.cambricon.inestia.modules.system.query.NewsQuery;
-import com.cambricon.inestia.modules.system.query.ProductQuery;
+import com.cambricon.inestia.modules.system.query.*;
 import com.cambricon.inestia.modules.system.service.JobService;
 import com.cambricon.inestia.modules.system.service.NewsService;
+import com.cambricon.inestia.modules.system.service.ProcessService;
 import com.cambricon.inestia.modules.system.service.ProductService;
+import com.cambricon.inestia.modules.system.vo.ProcessVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.persistence.SecondaryTable;
+import java.util.*;
 
 /**
  * @Description: TODO
@@ -33,6 +37,8 @@ public class HomeController {
     private ProductService productService;
     @Autowired
     private JobService jobService;
+    @Autowired
+    private ProcessService processService;
 
     @GetMapping("/")
     public String home(NewsQuery newsQuery,Model model) {
@@ -82,7 +88,39 @@ public class HomeController {
     @GetMapping("/home/platform")
     public String platform(CustomQuery cusdomQuery, Model model) {
         model.addAttribute("cusdomQuery", cusdomQuery);
+        ProcessQuery processQuery = new ProcessQuery();
+        PageResultSet<Process> page = processService.findByPage(processQuery);
+        List<ProcessVo> processList = getProcessList(page);
+        model.addAttribute("processList", processList);
         return "home/platform";
+    }
+
+    private List<ProcessVo> getProcessList(PageResultSet<Process> page) {
+        List<ProcessVo> list = new ArrayList<>();
+        Set<Integer> years = new HashSet<>();
+        for (Process row : page.getRows()) {
+            years.add(DateUtil.getYear(row.getPublishDate()));
+        }
+        for (Integer year : years) {
+            ProcessVo vo = new ProcessVo();
+            vo.setYear(year);
+            List<Process> processes = new ArrayList<>();
+            List<Process> rows = page.getRows();
+            for (int i = 0; i < rows.size(); i++) {
+                if (DateUtil.getYear(rows.get(i).getPublishDate()) == year) {
+                    if (i % 2 == 0) {
+                        rows.get(i).setPosition("pos-left");
+                    }else {
+                        rows.get(i).setPosition("pos-right");
+                    }
+                    rows.get(i).setPublishTime(DateUtil.toMonthString(rows.get(i).getPublishDate()));
+                    processes.add(rows.get(i));
+                }
+            }
+            vo.setProcesses(processes);
+            list.add(vo);
+        }
+        return list;
     }
 
     @GetMapping("/home/product")
