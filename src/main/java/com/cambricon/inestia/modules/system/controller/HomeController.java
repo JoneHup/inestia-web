@@ -97,7 +97,12 @@ public class HomeController {
 
     private List<ProcessVo> getProcessList(PageResultSet<Process> page) {
         List<ProcessVo> list = new ArrayList<>();
-        Set<Integer> years = new HashSet<>();
+        Set<Integer> years = new TreeSet<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+            }
+        });
         for (Process row : page.getRows()) {
             years.add(DateUtil.getYear(row.getPublishDate()));
         }
