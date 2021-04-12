@@ -13,4 +13,8 @@
         <result column="modify_date" property="modifyDate" jdbcType="TIMESTAMP" />
         <result column="dr" property="dr" jdbcType="BIT" />
     </resultMap>
+
+    <select id="findAllYears" resultType="java.lang.String">
+        select DATE_FORMAT(t.publish_date,'%Y') year from sys_process t GROUP BY year ORDER BY year desc
+    </select>
 </mapper>

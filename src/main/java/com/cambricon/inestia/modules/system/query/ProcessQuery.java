@@ -8,6 +8,8 @@ public class ProcessQuery extends BaseQuery<ProcessQuery> {
 
     private Boolean dr;
 
+    private Integer year;
+
     public String getProcessName() {
         return ProcessName;
     }
@@ -22,5 +24,13 @@ public class ProcessQuery extends BaseQuery<ProcessQuery> {
 
     public void setDr(Boolean dr) {
         this.dr = dr;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
     }
 }

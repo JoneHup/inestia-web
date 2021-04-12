@@ -14,6 +14,10 @@ import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.weekend.Weekend;
 import tk.mybatis.mapper.weekend.WeekendCriteria;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
 @Service
 public class ProcessServiceImpl implements ProcessService {
 
@@ -35,6 +39,12 @@ public class ProcessServiceImpl implements ProcessService {
             criteria.andLike(Process::getProcessName, "%" + processQuery.getProcessName() + "%");
         }
 
+        if (null != processQuery.getYear()) {
+            Calendar instance = Calendar.getInstance();
+            instance.set(processQuery.getYear(), 6, 0);
+            criteria.andEqualTo(Process::getPublishDate, instance.getWeekYear());
+        }
+
         processQuery.setDr(false);
         criteria.andEqualTo(Process::getDr,processQuery.getDr());
 
@@ -50,4 +60,14 @@ public class ProcessServiceImpl implements ProcessService {
         return resultSet;
     }
 
+    @Override
+    public List<String> findAllYears() {
+        return processMapper.findAllYears();
+    }
+
+    public static void main(String[] args) {
+        Calendar instance = Calendar.getInstance();
+        instance.set(2010, 0, 0);
+        System.out.println(instance.getWeekYear());
+    }
 }

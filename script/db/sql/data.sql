@@ -1,4 +1,4 @@
-INSERT INTO `sys_user` (`id`,`organization_id`,`username`,`password`,`salt`,`role_ids`,`group_ids`,`locked`) VALUES (1,1,'admin','d3c59d25033dbf980d29554025c23a75','8d78869f470951332959580424d4bf4f','1','1',0);
+INSERT INTO `sys_user` (`id`,`organization_id`,`username`,`password`,`salt`,`role_ids`,`group_ids`,`locked`) VALUES (1,1,'admin','844ef3adb0f6a90d0e6d28db80edbe77','be379cd8a830fc5cc04e77c96d544928','1','1',0);
 INSERT INTO `sys_role` (`id`,`role`,`description`,`resource_ids`,`available`) VALUES (1,'admin','超级管理员','11,21,31,41,46,69,70,75,80',0);
 
 

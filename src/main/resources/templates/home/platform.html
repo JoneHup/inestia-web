@@ -70,7 +70,7 @@
     </div>
 </div>
 
-<div class="page-ab-box2 wow fadeInUpa" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/platform_head.jpg)'">
+<div id="firstDiv" class="page-ab-box2 wow fadeInUpa" th:style="'background-image: url('+ ${#httpServletRequest.getContextPath()} +'/static/home/img/platform_head.jpg)'">
     <div class="container">
         <div class="item">
             <div class="txt">
@@ -85,7 +85,29 @@
 </div>
 
 <a name="nav2" id="nav2"></a>
-<div class="scroll-nav page-cp-box-tit page-hy-tit">
+<div class="scroll-nav container">
+<!--    <div class="page-nav-right-nav">-->
+<!--        <ul>-->
+<!--            <li class="active"><a href="/home/platform">发展历程</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+    <div class="page-nav-right-select" id="page-nav-right-select">
+        <ul id="containerUl">
+            <li class="active"><a href="javascript:void(0)">发展历程</a></li>
+            <li>
+                <a id="allYearA" href="javaScript:;">全部年份</a>
+                <ul id="allYearUl">
+                    <th th:each="year : ${years}">
+                        <li><a href="javascript:void(0)">[[${year}]]</a></li>
+                    </th>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="page-cp-box-tit page-hy-tit">
     <div class="container">
         <div class="tit wow fadeInUpa">
             <h2>超算中心历程</h2>
@@ -93,32 +115,8 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="VivaTimeline">
-                <dl th:each="processVo : ${processList}">
-                    <dt>[[${processVo.year}]]</dt>
-                    <th th:each="process : ${processVo.processes}">
-                        <dd th:class="${process.position} + ' clearfix'">
-                            <div class="circ"></div>
-                            <div class="time">[[${process.publishTime}]]</div>
-                            <div class="events">
-                                <div class="events-header">[[${process.processName}]]</div>
-                                <div class="events-body">
-                                    <div class="row">
-                                        <div class="events-desc">
-                                            [[${process.introduction}]]
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </dd>
-                    </th>
-                </dl>
-            </div>
-        </div>
-    </div>
+<div class="container" id="licheng">
+
 </div>
 
 <!--<a name="nav3" id="nav3"></a>
@@ -144,9 +142,26 @@
 <footer th:include="home/footer :: footer"></footer>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.VivaTimeline').vivaTimeline({
-            carousel: true,
-            carouselTime: 3000
+        $("#containerUl a").click(function () {
+            $("#allYearUl").hide();
+            var year;
+            if (! isNaN($(this).text())) {
+                year = $(this).text();
+                $("#allYearA").text(year);
+            } else {
+                $("#allYearA").text("全部年份");
+            }
+            $.ajax({
+                url: "/home/platform/process/searchByCodition",
+                type:'get',
+                data:
+                    {
+                        year: year
+                    },
+                success:function(page){
+                    $("#licheng").empty().append(page);
+                }
+            });
         });
     });
 

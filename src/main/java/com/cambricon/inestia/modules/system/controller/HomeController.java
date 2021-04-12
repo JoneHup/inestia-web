@@ -88,11 +88,17 @@ public class HomeController {
     @GetMapping("/home/platform")
     public String platform(CustomQuery cusdomQuery, Model model) {
         model.addAttribute("cusdomQuery", cusdomQuery);
-        ProcessQuery processQuery = new ProcessQuery();
+        List<String> yearList = processService.findAllYears();
+        model.addAttribute("years", yearList);
+        return "home/platform";
+    }
+
+    @GetMapping("/home/platform/process/searchByCodition")
+    public String searchByCodition(ProcessQuery processQuery, Model model) {
         PageResultSet<Process> page = processService.findByPage(processQuery);
         List<ProcessVo> processList = getProcessList(page);
         model.addAttribute("processList", processList);
-        return "home/platform";
+        return "home/process";
     }
 
     private List<ProcessVo> getProcessList(PageResultSet<Process> page) {

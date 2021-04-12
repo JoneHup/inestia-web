@@ -8,7 +8,8 @@ $(function() {
   });
   wow.init();
   
-  // queryByPage();
+  getProcessPage();
+  // searchByCodition();
 
   if ($(".index-banner").length > 0) {
     var swiper = new Swiper(".index-banner .swiper-container", {
@@ -662,17 +663,13 @@ layui.use(["form", "util", "element"], function() {
     });
 });
 
-function queryByPage() {
-    $.ajax({
-        url: "/home/news",
-        type:'get',
-        data:{
-            order: asc,
-            offset: 10,
-            limit: 10
-        },
-        success:function(data){
-            console.info(data);
-        }
-    });
+function getProcessPage() {
+  $.ajax({
+    url: "/home/platform/process/searchByCodition",
+    type:'get',
+    success:function(page){
+      $("#licheng").append(page);
+    }
+  });
 }
+
