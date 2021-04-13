@@ -50,7 +50,9 @@ ZTree | jQuery树插件 | 3.5.29 |  [http://www.treejs.cn](http://www.treejs.cn)
 
 ## 获取源码
 
- [https://github.com/cjbi/wetech-admin](https://github.com/cjbi/wetech-admin "github")
+     [https://github.com/JoneHup/inestia-web.git]
+官网系统:   切换分支v2.0-manage
+后台管理系统: 切换分支v2.0-web
 
- [https://gitee.com/cjbi/wetech-admin](https://gitee.com/cjbi/wetech-admin "gitee")
+
 
