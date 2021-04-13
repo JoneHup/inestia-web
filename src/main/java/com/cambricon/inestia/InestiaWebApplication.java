@@ -24,6 +24,6 @@ public class InestiaWebApplication extends SpringBootServletInitializer implemen
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info("服务启动完成!");
+        logger.info("官网服务启动完成!");
     }
 }
